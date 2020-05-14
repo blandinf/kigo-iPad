@@ -47,7 +47,6 @@ function playerIsDead (msg) {
     let player = JSON.parse(msg.player)
     deadPlayers.push(player)
     if (deadPlayers.length == 2) {
-        console.log("send winner")
         io.emit("winnerIs", deadPlayers[1].id)
     }
 }

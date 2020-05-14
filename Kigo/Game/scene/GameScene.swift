@@ -217,7 +217,6 @@ class GameScene: SKScene {
     }
     
     func infligeBonus (type: String) {
-        print("infligeBonus \(type)")
         switch type {
             case BonusTypes.BALLOON.rawValue:
                 balloonEffect()

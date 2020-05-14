@@ -24,6 +24,7 @@ class GameViewController: UIViewController {
         if let scene = GameScene(fileNamed: "GameScene") {
             scene.scaleMode = .aspectFill
             scene.backgroundColor = .clear
+            scene.gameDelegate = self
             skView.presentScene(scene)
             infligeBonus(scene: scene)
             whoIsTheWinner(scene: scene)
@@ -68,46 +69,46 @@ class GameViewController: UIViewController {
         })
     }
 
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        captureSession = AVCaptureSession()
-//        captureSession.sessionPreset = .medium
-//        guard let backCamera = AVCaptureDevice.default(for: AVMediaType.video)
-//            else {
-//                print("Unable to access back camera!")
-//                return
-//        }
-//        do {
-//            let input = try AVCaptureDeviceInput(device: backCamera)
-//            stillImageOutput = AVCapturePhotoOutput()
-//            if captureSession.canAddInput(input) && captureSession.canAddOutput(stillImageOutput) {
-//                captureSession.addInput(input)
-//                captureSession.addOutput(stillImageOutput)
-//                setupLivePreview()
-//            }
-//        }
-//        catch let error  {
-//            print("Error Unable to initialize back camera:  \(error.localizedDescription)")
-//        }
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        captureSession = AVCaptureSession()
+        captureSession.sessionPreset = .medium
+        guard let backCamera = AVCaptureDevice.default(for: AVMediaType.video)
+            else {
+                print("Unable to access back camera!")
+                return
+        }
+        do {
+            let input = try AVCaptureDeviceInput(device: backCamera)
+            stillImageOutput = AVCapturePhotoOutput()
+            if captureSession.canAddInput(input) && captureSession.canAddOutput(stillImageOutput) {
+                captureSession.addInput(input)
+                captureSession.addOutput(stillImageOutput)
+                setupLivePreview()
+            }
+        }
+        catch let error  {
+            print("Error Unable to initialize back camera:  \(error.localizedDescription)")
+        }
+    }
     
-//    func setupLivePreview() {
-//        
-//        videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-//        
-//        videoPreviewLayer.videoGravity = .resize
-//        videoPreviewLayer.connection?.videoOrientation = .landscapeRight
-//        view.layer.addSublayer(videoPreviewLayer)
-//        view.addSubview(skView)
-//        
-//        
-//        DispatchQueue.global(qos: .userInitiated).async { //[weak self] in
-//            self.captureSession.startRunning()
-//            DispatchQueue.main.async {
-//                self.videoPreviewLayer.frame = self.view.bounds
-//            }
-//        }
-//    }
+    func setupLivePreview() {
+        
+        videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        
+        videoPreviewLayer.videoGravity = .resize
+        videoPreviewLayer.connection?.videoOrientation = .landscapeRight
+        view.layer.addSublayer(videoPreviewLayer)
+        view.addSubview(skView)
+        
+        
+        DispatchQueue.global(qos: .userInitiated).async { //[weak self] in
+            self.captureSession.startRunning()
+            DispatchQueue.main.async {
+                self.videoPreviewLayer.frame = self.view.bounds
+            }
+        }
+    }
     
     override var shouldAutorotate: Bool {
         return true
