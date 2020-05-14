@@ -16,6 +16,13 @@
 		AD4DE486246DD62C00061D32 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE485246DD62C00061D32 /* Slide.swift */; };
 		AD4DE48A246DD6D100061D32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD4DE489246DD6D100061D32 /* GoogleService-Info.plist */; };
 		AD4DE48C246DD71F00061D32 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4DE48B246DD71F00061D32 /* Slide.xib */; };
+		AD4DE48E246DD93200061D32 /* BonusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE48D246DD93200061D32 /* BonusNode.swift */; };
+		AD4DE490246DD98A00061D32 /* bonus-types.json in Resources */ = {isa = PBXBuildFile; fileRef = AD4DE48F246DD98A00061D32 /* bonus-types.json */; };
+		AD4DE492246DD9AA00061D32 /* Bonus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE491246DD9AA00061D32 /* Bonus.swift */; };
+		AD4DE494246DD9C400061D32 /* BonusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE493246DD9C400061D32 /* BonusType.swift */; };
+		AD4DE496246DD9E500061D32 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE495246DD9E500061D32 /* Player.swift */; };
+		AD4DE498246DDA3900061D32 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE497246DDA3900061D32 /* OnBoardingViewController.swift */; };
+		AD4DE49A246DDAA900061D32 /* WaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE499246DDAA900061D32 /* WaitingViewController.swift */; };
 		AD4F40EB24562235002AE90D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F40EA24562235002AE90D /* GameViewController.swift */; };
 		AD4F40F024562281002AE90D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F40EF24562281002AE90D /* GameScene.swift */; };
 		AD4F40FA2456229B002AE90D /* Bundle-Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F40F52456229B002AE90D /* Bundle-Decoding.swift */; };
@@ -30,16 +37,9 @@
 		ADD67B34246846BE00108D49 /* viewWholeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B33246846BE00108D49 /* viewWholeScreen.swift */; };
 		ADD67B4424684D1D00108D49 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B3E24684D1D00108D49 /* Wave.swift */; };
 		ADD67B4524684D1D00108D49 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B3F24684D1D00108D49 /* Game.swift */; };
-		ADD67B4624684D1D00108D49 /* BonusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B4024684D1D00108D49 /* BonusType.swift */; };
-		ADD67B4724684D1D00108D49 /* Bonus.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B4124684D1D00108D49 /* Bonus.swift */; };
 		ADD67B4824684D1D00108D49 /* EnemyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B4224684D1D00108D49 /* EnemyType.swift */; };
-		ADD67B4924684D1D00108D49 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B4324684D1D00108D49 /* Player.swift */; };
 		ADD67B4E24684E4600108D49 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = ADD67B4D24684E4600108D49 /* SocketIO */; };
 		ADD67B5D24684FC600108D49 /* EnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B5B24684FC600108D49 /* EnemyNode.swift */; };
-		ADD67B5E24684FC600108D49 /* BonusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B5C24684FC600108D49 /* BonusNode.swift */; };
-		ADD67B6324684FF400108D49 /* WaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B6024684FF400108D49 /* WaitingViewController.swift */; };
-		ADD67B6424684FF400108D49 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B6124684FF400108D49 /* OnBoardingViewController.swift */; };
-		ADFF4BDF2468569400825C3E /* bonus-types.json in Resources */ = {isa = PBXBuildFile; fileRef = ADD67B4F24684EF000108D49 /* bonus-types.json */; };
 		ADFF4BE02468569400825C3E /* enemy-types.json in Resources */ = {isa = PBXBuildFile; fileRef = ADD67B5124684EF000108D49 /* enemy-types.json */; };
 		ADFF4BE12468569400825C3E /* waves.json in Resources */ = {isa = PBXBuildFile; fileRef = ADD67B5024684EF000108D49 /* waves.json */; };
 		ADFF4BE2246856A900825C3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4D0AE02451B556007B8D9E /* Main.storyboard */; };
@@ -64,6 +64,13 @@
 		AD4DE485246DD62C00061D32 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		AD4DE489246DD6D100061D32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Documents/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD4DE48B246DD71F00061D32 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		AD4DE48D246DD93200061D32 /* BonusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusNode.swift; sourceTree = "<group>"; };
+		AD4DE48F246DD98A00061D32 /* bonus-types.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "bonus-types.json"; sourceTree = "<group>"; };
+		AD4DE491246DD9AA00061D32 /* Bonus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bonus.swift; sourceTree = "<group>"; };
+		AD4DE493246DD9C400061D32 /* BonusType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusType.swift; sourceTree = "<group>"; };
+		AD4DE495246DD9E500061D32 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		AD4DE497246DDA3900061D32 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		AD4DE499246DDAA900061D32 /* WaitingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingViewController.swift; sourceTree = "<group>"; };
 		AD4F40EA24562235002AE90D /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AD4F40EF24562281002AE90D /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		AD4F40F124562290002AE90D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -79,17 +86,10 @@
 		ADD67B33246846BE00108D49 /* viewWholeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewWholeScreen.swift; sourceTree = "<group>"; };
 		ADD67B3E24684D1D00108D49 /* Wave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Wave.swift; path = ../../../../SpaceGame/client/SpaceGame/Wave.swift; sourceTree = "<group>"; };
 		ADD67B3F24684D1D00108D49 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = ../../../../SpaceGame/client/SpaceGame/models/Game.swift; sourceTree = "<group>"; };
-		ADD67B4024684D1D00108D49 /* BonusType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BonusType.swift; path = ../../../../SpaceGame/client/SpaceGame/models/BonusType.swift; sourceTree = "<group>"; };
-		ADD67B4124684D1D00108D49 /* Bonus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bonus.swift; path = ../../../../SpaceGame/client/SpaceGame/models/Bonus.swift; sourceTree = "<group>"; };
 		ADD67B4224684D1D00108D49 /* EnemyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnemyType.swift; path = ../../../../SpaceGame/client/SpaceGame/EnemyType.swift; sourceTree = "<group>"; };
-		ADD67B4324684D1D00108D49 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../../../../SpaceGame/client/SpaceGame/models/Player.swift; sourceTree = "<group>"; };
-		ADD67B4F24684EF000108D49 /* bonus-types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "bonus-types.json"; path = "../../../../SpaceGame/client/SpaceGame/datas/bonus-types.json"; sourceTree = "<group>"; };
 		ADD67B5024684EF000108D49 /* waves.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = waves.json; path = ../../../../SpaceGame/client/SpaceGame/waves.json; sourceTree = "<group>"; };
 		ADD67B5124684EF000108D49 /* enemy-types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "enemy-types.json"; path = "../../../../SpaceGame/client/SpaceGame/enemy-types.json"; sourceTree = "<group>"; };
 		ADD67B5B24684FC600108D49 /* EnemyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnemyNode.swift; path = ../../../../SpaceGame/client/SpaceGame/EnemyNode.swift; sourceTree = "<group>"; };
-		ADD67B5C24684FC600108D49 /* BonusNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BonusNode.swift; path = ../../../../SpaceGame/client/SpaceGame/nodes/BonusNode.swift; sourceTree = "<group>"; };
-		ADD67B6024684FF400108D49 /* WaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WaitingViewController.swift; path = ../../../../SpaceGame/client/SpaceGame/controllers/WaitingViewController.swift; sourceTree = "<group>"; };
-		ADD67B6124684FF400108D49 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingViewController.swift; path = ../../../../SpaceGame/client/SpaceGame/controllers/OnBoardingViewController.swift; sourceTree = "<group>"; };
 		F9DFDFA088D4FE93F48D47D0 /* Pods-Kigo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kigo.release.xcconfig"; path = "Target Support Files/Pods-Kigo/Pods-Kigo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,8 +165,8 @@
 		AD4F40EC24562266002AE90D /* nodes */ = {
 			isa = PBXGroup;
 			children = (
-				ADD67B5C24684FC600108D49 /* BonusNode.swift */,
 				ADD67B5B24684FC600108D49 /* EnemyNode.swift */,
+				AD4DE48D246DD93200061D32 /* BonusNode.swift */,
 			);
 			path = nodes;
 			sourceTree = "<group>";
@@ -174,9 +174,9 @@
 		AD4F40FD245622A9002AE90D /* datas */ = {
 			isa = PBXGroup;
 			children = (
-				ADD67B4F24684EF000108D49 /* bonus-types.json */,
 				ADD67B5124684EF000108D49 /* enemy-types.json */,
 				ADD67B5024684EF000108D49 /* waves.json */,
+				AD4DE48F246DD98A00061D32 /* bonus-types.json */,
 			);
 			path = datas;
 			sourceTree = "<group>";
@@ -185,13 +185,13 @@
 			isa = PBXGroup;
 			children = (
 				AD9409D9246D935C0002E9B4 /* Child.swift */,
-				ADD67B4124684D1D00108D49 /* Bonus.swift */,
-				ADD67B4024684D1D00108D49 /* BonusType.swift */,
 				ADD67B4224684D1D00108D49 /* EnemyType.swift */,
 				ADD67B3F24684D1D00108D49 /* Game.swift */,
 				AD9409DB246D93720002E9B4 /* APIGame.swift */,
-				ADD67B4324684D1D00108D49 /* Player.swift */,
 				ADD67B3E24684D1D00108D49 /* Wave.swift */,
+				AD4DE491246DD9AA00061D32 /* Bonus.swift */,
+				AD4DE493246DD9C400061D32 /* BonusType.swift */,
+				AD4DE495246DD9E500061D32 /* Player.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -284,8 +284,8 @@
 			isa = PBXGroup;
 			children = (
 				AD4F40EA24562235002AE90D /* GameViewController.swift */,
-				ADD67B6124684FF400108D49 /* OnBoardingViewController.swift */,
-				ADD67B6024684FF400108D49 /* WaitingViewController.swift */,
+				AD4DE497246DDA3900061D32 /* OnBoardingViewController.swift */,
+				AD4DE499246DDAA900061D32 /* WaitingViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -365,11 +365,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADFF4BE6246856CE00825C3E /* LaunchScreen.storyboard in Resources */,
+				AD4DE490246DD98A00061D32 /* bonus-types.json in Resources */,
 				ADFF4BE5246856C100825C3E /* GameScene.sks in Resources */,
 				AD4DE48A246DD6D100061D32 /* GoogleService-Info.plist in Resources */,
 				ADFF4BE4246856B900825C3E /* Assets.xcassets in Resources */,
 				ADFF4BE2246856A900825C3E /* Main.storyboard in Resources */,
-				ADFF4BDF2468569400825C3E /* bonus-types.json in Resources */,
 				ADFF4BE02468569400825C3E /* enemy-types.json in Resources */,
 				ADFF4BE12468569400825C3E /* waves.json in Resources */,
 				AD4DE48C246DD71F00061D32 /* Slide.xib in Resources */,
@@ -428,15 +428,15 @@
 				AD9409D4246D93320002E9B4 /* ChildrenService.swift in Sources */,
 				ADD67B2F2468093300108D49 /* MapViewController.swift in Sources */,
 				ADD67B4524684D1D00108D49 /* Game.swift in Sources */,
+				AD4DE49A246DDAA900061D32 /* WaitingViewController.swift in Sources */,
+				AD4DE48E246DD93200061D32 /* BonusNode.swift in Sources */,
 				AD4F40F024562281002AE90D /* GameScene.swift in Sources */,
-				ADD67B6424684FF400108D49 /* OnBoardingViewController.swift in Sources */,
 				AD9409E0246D94B30002E9B4 /* WhoViewController.swift in Sources */,
 				AD4DE482246DD5B300061D32 /* GameDelegate.swift in Sources */,
-				ADD67B4624684D1D00108D49 /* BonusType.swift in Sources */,
-				ADD67B5E24684FC600108D49 /* BonusNode.swift in Sources */,
-				ADD67B6324684FF400108D49 /* WaitingViewController.swift in Sources */,
+				AD4DE498246DDA3900061D32 /* OnBoardingViewController.swift in Sources */,
 				AD9409DC246D93720002E9B4 /* APIGame.swift in Sources */,
 				ADD67B2D2468090400108D49 /* DrawViewController.swift in Sources */,
+				AD4DE496246DD9E500061D32 /* Player.swift in Sources */,
 				ADD67B4424684D1D00108D49 /* Wave.swift in Sources */,
 				AD4F40EB24562235002AE90D /* GameViewController.swift in Sources */,
 				AD9409DE246D93820002E9B4 /* GameService.swift in Sources */,
@@ -448,10 +448,10 @@
 				AD4DE486246DD62C00061D32 /* Slide.swift in Sources */,
 				AD4F40FA2456229B002AE90D /* Bundle-Decoding.swift in Sources */,
 				AD4D0ADB2451B556007B8D9E /* AppDelegate.swift in Sources */,
-				ADD67B4724684D1D00108D49 /* Bonus.swift in Sources */,
 				AD4D0ADD2451B556007B8D9E /* SceneDelegate.swift in Sources */,
+				AD4DE492246DD9AA00061D32 /* Bonus.swift in Sources */,
 				AD9409DA246D935C0002E9B4 /* Child.swift in Sources */,
-				ADD67B4924684D1D00108D49 /* Player.swift in Sources */,
+				AD4DE494246DD9C400061D32 /* BonusType.swift in Sources */,
 				ADD67B34246846BE00108D49 /* viewWholeScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

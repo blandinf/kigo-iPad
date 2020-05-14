@@ -108,8 +108,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="eze-1N-I1s"/>
                     <connections>
-                        <outlet property="myScrollView" destination="a0x-aV-2wJ" id="vct-ln-doj"/>
-                        <outlet property="pageControl" destination="fAd-ow-ruj" id="ggG-ZF-x3S"/>
+                        <outlet property="myScrollView" destination="a0x-aV-2wJ" id="gM5-TU-B9G"/>
+                        <outlet property="pageControl" destination="fAd-ow-ruj" id="tki-FV-eMc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aRx-YD-7ZO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -155,7 +155,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="SV8-ll-FQf"/>
                     <connections>
-                        <outlet property="usernameLbl" destination="v1l-1G-Ssq" id="jpM-EA-e1a"/>
+                        <outlet property="usernameLbl" destination="v1l-1G-Ssq" id="mKy-sd-lEw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUq-Hk-K9L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
