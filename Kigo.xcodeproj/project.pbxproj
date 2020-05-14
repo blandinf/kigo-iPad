@@ -148,7 +148,6 @@
 				ADD67B3624684B8F00108D49 /* Draw */,
 				ADD67B3524684B8100108D49 /* Game */,
 				AD9409D2246D93080002E9B4 /* services */,
-				AD9409D5246D93410002E9B4 /* models */,
 				ADD67B32246846A200108D49 /* extensions */,
 				AD9409DF246D94B30002E9B4 /* WhoViewController.swift */,
 				AD4D0ADE2451B556007B8D9E /* HomeViewController.swift */,
@@ -185,10 +184,12 @@
 		AD4F40FE245622B9002AE90D /* models */ = {
 			isa = PBXGroup;
 			children = (
+				AD9409D9246D935C0002E9B4 /* Child.swift */,
 				ADD67B4124684D1D00108D49 /* Bonus.swift */,
 				ADD67B4024684D1D00108D49 /* BonusType.swift */,
 				ADD67B4224684D1D00108D49 /* EnemyType.swift */,
 				ADD67B3F24684D1D00108D49 /* Game.swift */,
+				AD9409DB246D93720002E9B4 /* APIGame.swift */,
 				ADD67B4324684D1D00108D49 /* Player.swift */,
 				ADD67B3E24684D1D00108D49 /* Wave.swift */,
 			);
@@ -202,15 +203,6 @@
 				AD9409DD246D93820002E9B4 /* GameService.swift */,
 			);
 			path = services;
-			sourceTree = "<group>";
-		};
-		AD9409D5246D93410002E9B4 /* models */ = {
-			isa = PBXGroup;
-			children = (
-				AD9409D9246D935C0002E9B4 /* Child.swift */,
-				AD9409DB246D93720002E9B4 /* APIGame.swift */,
-			);
-			path = models;
 			sourceTree = "<group>";
 		};
 		ADD67B32246846A200108D49 /* extensions */ = {
