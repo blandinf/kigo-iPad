@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32905491EB713D0A625B8DBA /* libPods-Kigo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2E2CF74A10428B9A0F9AA8 /* libPods-Kigo.a */; };
 		AD4D0ADB2451B556007B8D9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D0ADA2451B556007B8D9E /* AppDelegate.swift */; };
 		AD4D0ADD2451B556007B8D9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D0ADC2451B556007B8D9E /* SceneDelegate.swift */; };
 		AD4D0ADF2451B556007B8D9E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D0ADE2451B556007B8D9E /* HomeViewController.swift */; };
 		AD4F40EB24562235002AE90D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F40EA24562235002AE90D /* GameViewController.swift */; };
 		AD4F40F024562281002AE90D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F40EF24562281002AE90D /* GameScene.swift */; };
 		AD4F40FA2456229B002AE90D /* Bundle-Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F40F52456229B002AE90D /* Bundle-Decoding.swift */; };
+		AD6612EF246BF9FF00E054C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD6612EE246BF9FF00E054C3 /* GoogleService-Info.plist */; };
+		AD9409D4246D93320002E9B4 /* ChildrenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9409D3246D93320002E9B4 /* ChildrenService.swift */; };
+		AD9409DA246D935C0002E9B4 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9409D9246D935C0002E9B4 /* Child.swift */; };
+		AD9409DC246D93720002E9B4 /* APIGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9409DB246D93720002E9B4 /* APIGame.swift */; };
+		AD9409DE246D93820002E9B4 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9409DD246D93820002E9B4 /* GameService.swift */; };
+		AD9409E0246D94B30002E9B4 /* WhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9409DF246D94B30002E9B4 /* WhoViewController.swift */; };
 		ADD67B2D2468090400108D49 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B2C2468090400108D49 /* DrawViewController.swift */; };
 		ADD67B2F2468093300108D49 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B2E2468093300108D49 /* MapViewController.swift */; };
 		ADD67B312468096C00108D49 /* SwiftSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B302468096C00108D49 /* SwiftSignatureView.swift */; };
@@ -29,7 +36,6 @@
 		ADD67B5924684F2C00108D49 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B5724684F2C00108D49 /* Slide.swift */; };
 		ADD67B5D24684FC600108D49 /* EnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B5B24684FC600108D49 /* EnemyNode.swift */; };
 		ADD67B5E24684FC600108D49 /* BonusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B5C24684FC600108D49 /* BonusNode.swift */; };
-		ADD67B6224684FF400108D49 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B5F24684FF400108D49 /* LoginViewController.swift */; };
 		ADD67B6324684FF400108D49 /* WaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B6024684FF400108D49 /* WaitingViewController.swift */; };
 		ADD67B6424684FF400108D49 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B6124684FF400108D49 /* OnBoardingViewController.swift */; };
 		ADFF4BDF2468569400825C3E /* bonus-types.json in Resources */ = {isa = PBXBuildFile; fileRef = ADD67B4F24684EF000108D49 /* bonus-types.json */; };
@@ -43,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		73B765928ECFC923DDAD5C89 /* Pods-Kigo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kigo.debug.xcconfig"; path = "Target Support Files/Pods-Kigo/Pods-Kigo.debug.xcconfig"; sourceTree = "<group>"; };
+		9C2E2CF74A10428B9A0F9AA8 /* libPods-Kigo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kigo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4D0AD72451B556007B8D9E /* Kigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4D0ADA2451B556007B8D9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD4D0ADC2451B556007B8D9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +63,12 @@
 		AD4F40EF24562281002AE90D /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		AD4F40F124562290002AE90D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		AD4F40F52456229B002AE90D /* Bundle-Decoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decoding.swift"; sourceTree = "<group>"; };
+		AD6612EE246BF9FF00E054C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Documents/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AD9409D3246D93320002E9B4 /* ChildrenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenService.swift; sourceTree = "<group>"; };
+		AD9409D9246D935C0002E9B4 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
+		AD9409DB246D93720002E9B4 /* APIGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIGame.swift; sourceTree = "<group>"; };
+		AD9409DD246D93820002E9B4 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		AD9409DF246D94B30002E9B4 /* WhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoViewController.swift; sourceTree = "<group>"; };
 		ADD67B2C2468090400108D49 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
 		ADD67B2E2468093300108D49 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		ADD67B302468096C00108D49 /* SwiftSignatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSignatureView.swift; sourceTree = "<group>"; };
@@ -74,9 +88,9 @@
 		ADD67B5824684F2C00108D49 /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Slide.xib; path = ../../../../SpaceGame/client/SpaceGame/views/Slide.xib; sourceTree = "<group>"; };
 		ADD67B5B24684FC600108D49 /* EnemyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnemyNode.swift; path = ../../../../SpaceGame/client/SpaceGame/EnemyNode.swift; sourceTree = "<group>"; };
 		ADD67B5C24684FC600108D49 /* BonusNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BonusNode.swift; path = ../../../../SpaceGame/client/SpaceGame/nodes/BonusNode.swift; sourceTree = "<group>"; };
-		ADD67B5F24684FF400108D49 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../../../../SpaceGame/client/SpaceGame/controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		ADD67B6024684FF400108D49 /* WaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WaitingViewController.swift; path = ../../../../SpaceGame/client/SpaceGame/controllers/WaitingViewController.swift; sourceTree = "<group>"; };
 		ADD67B6124684FF400108D49 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingViewController.swift; path = ../../../../SpaceGame/client/SpaceGame/controllers/OnBoardingViewController.swift; sourceTree = "<group>"; };
+		F9DFDFA088D4FE93F48D47D0 /* Pods-Kigo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kigo.release.xcconfig"; path = "Target Support Files/Pods-Kigo/Pods-Kigo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,17 +99,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD67B4E24684E4600108D49 /* SocketIO in Frameworks */,
+				32905491EB713D0A625B8DBA /* libPods-Kigo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5261DA7B9AE98A01E65F3B53 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				73B765928ECFC923DDAD5C89 /* Pods-Kigo.debug.xcconfig */,
+				F9DFDFA088D4FE93F48D47D0 /* Pods-Kigo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		81C536B138D48D3D6EE00BB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C2E2CF74A10428B9A0F9AA8 /* libPods-Kigo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AD4D0ACE2451B556007B8D9E = {
 			isa = PBXGroup;
 			children = (
 				AD4D0AD92451B556007B8D9E /* Kigo */,
 				AD4D0AD82451B556007B8D9E /* Products */,
+				5261DA7B9AE98A01E65F3B53 /* Pods */,
+				81C536B138D48D3D6EE00BB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,12 +147,16 @@
 				ADD67B3724684B9900108D49 /* Map */,
 				ADD67B3624684B8F00108D49 /* Draw */,
 				ADD67B3524684B8100108D49 /* Game */,
+				AD9409D2246D93080002E9B4 /* services */,
+				AD9409D5246D93410002E9B4 /* models */,
 				ADD67B32246846A200108D49 /* extensions */,
+				AD9409DF246D94B30002E9B4 /* WhoViewController.swift */,
 				AD4D0ADE2451B556007B8D9E /* HomeViewController.swift */,
 				AD4D0AE32451B559007B8D9E /* Assets.xcassets */,
 				AD4D0AE02451B556007B8D9E /* Main.storyboard */,
 				AD4D0ADA2451B556007B8D9E /* AppDelegate.swift */,
 				AD4D0AE52451B559007B8D9E /* LaunchScreen.storyboard */,
+				AD6612EE246BF9FF00E054C3 /* GoogleService-Info.plist */,
 				AD4D0AE82451B559007B8D9E /* Info.plist */,
 				ADD67B3D24684C8B00108D49 /* utils */,
 			);
@@ -153,6 +191,24 @@
 				ADD67B3F24684D1D00108D49 /* Game.swift */,
 				ADD67B4324684D1D00108D49 /* Player.swift */,
 				ADD67B3E24684D1D00108D49 /* Wave.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		AD9409D2246D93080002E9B4 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				AD9409D3246D93320002E9B4 /* ChildrenService.swift */,
+				AD9409DD246D93820002E9B4 /* GameService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		AD9409D5246D93410002E9B4 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				AD9409D9246D935C0002E9B4 /* Child.swift */,
+				AD9409DB246D93720002E9B4 /* APIGame.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -236,7 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				AD4F40EA24562235002AE90D /* GameViewController.swift */,
-				ADD67B5F24684FF400108D49 /* LoginViewController.swift */,
 				ADD67B6124684FF400108D49 /* OnBoardingViewController.swift */,
 				ADD67B6024684FF400108D49 /* WaitingViewController.swift */,
 			);
@@ -258,9 +313,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD4D0AEB2451B559007B8D9E /* Build configuration list for PBXNativeTarget "Kigo" */;
 			buildPhases = (
+				215E780F11C74E12DD81C3E3 /* [CP] Check Pods Manifest.lock */,
 				AD4D0AD32451B556007B8D9E /* Sources */,
 				AD4D0AD42451B556007B8D9E /* Frameworks */,
 				AD4D0AD52451B556007B8D9E /* Resources */,
+				6C7416F12D91B731DAFB85D5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -321,6 +378,7 @@
 				ADFF4BE3246856B300825C3E /* Slide.xib in Resources */,
 				ADFF4BE2246856A900825C3E /* Main.storyboard in Resources */,
 				ADFF4BDF2468569400825C3E /* bonus-types.json in Resources */,
+				AD6612EF246BF9FF00E054C3 /* GoogleService-Info.plist in Resources */,
 				ADFF4BE02468569400825C3E /* enemy-types.json in Resources */,
 				ADFF4BE12468569400825C3E /* waves.json in Resources */,
 			);
@@ -328,24 +386,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		215E780F11C74E12DD81C3E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kigo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C7416F12D91B731DAFB85D5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kigo/Pods-Kigo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kigo/Pods-Kigo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kigo/Pods-Kigo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AD4D0AD32451B556007B8D9E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9409D4246D93320002E9B4 /* ChildrenService.swift in Sources */,
 				ADD67B2F2468093300108D49 /* MapViewController.swift in Sources */,
 				ADD67B4524684D1D00108D49 /* Game.swift in Sources */,
 				AD4F40F024562281002AE90D /* GameScene.swift in Sources */,
 				ADD67B6424684FF400108D49 /* OnBoardingViewController.swift in Sources */,
+				AD9409E0246D94B30002E9B4 /* WhoViewController.swift in Sources */,
 				ADD67B5624684F2100108D49 /* GameDelegate.swift in Sources */,
 				ADD67B4624684D1D00108D49 /* BonusType.swift in Sources */,
 				ADD67B5E24684FC600108D49 /* BonusNode.swift in Sources */,
 				ADD67B6324684FF400108D49 /* WaitingViewController.swift in Sources */,
 				ADD67B4B24684DA200108D49 /* SocketIOManager.swift in Sources */,
+				AD9409DC246D93720002E9B4 /* APIGame.swift in Sources */,
 				ADD67B2D2468090400108D49 /* DrawViewController.swift in Sources */,
 				ADD67B4424684D1D00108D49 /* Wave.swift in Sources */,
 				AD4F40EB24562235002AE90D /* GameViewController.swift in Sources */,
-				ADD67B6224684FF400108D49 /* LoginViewController.swift in Sources */,
+				AD9409DE246D93820002E9B4 /* GameService.swift in Sources */,
 				ADD67B4824684D1D00108D49 /* EnemyType.swift in Sources */,
 				ADD67B5D24684FC600108D49 /* EnemyNode.swift in Sources */,
 				ADD67B312468096C00108D49 /* SwiftSignatureView.swift in Sources */,
@@ -354,6 +457,7 @@
 				AD4D0ADB2451B556007B8D9E /* AppDelegate.swift in Sources */,
 				ADD67B4724684D1D00108D49 /* Bonus.swift in Sources */,
 				AD4D0ADD2451B556007B8D9E /* SceneDelegate.swift in Sources */,
+				AD9409DA246D935C0002E9B4 /* Child.swift in Sources */,
 				ADD67B4924684D1D00108D49 /* Player.swift in Sources */,
 				ADD67B34246846BE00108D49 /* viewWholeScreen.swift in Sources */,
 				ADD67B5924684F2C00108D49 /* Slide.swift in Sources */,
@@ -498,6 +602,7 @@
 		};
 		AD4D0AEC2451B559007B8D9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73B765928ECFC923DDAD5C89 /* Pods-Kigo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -516,6 +621,7 @@
 		};
 		AD4D0AED2451B559007B8D9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9DFDFA088D4FE93F48D47D0 /* Pods-Kigo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

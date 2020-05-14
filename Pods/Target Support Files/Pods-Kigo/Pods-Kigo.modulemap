@@ -1,0 +1,6 @@
+framework module Pods_Kigo {
+  umbrella header "Pods-Kigo-umbrella.h"
+
+  export *
+  module * { export * }
+}
