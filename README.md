@@ -1,6 +1,6 @@
 # kigo-iPad
 kigo is the car future.
-He transorms your windows into fabulous screens for children.
+He transforms your windows into fabulous screens for children.
 They will able to draw, play together, sleep with beautiful animations and all of that's on top of the scenery.
 
 ## Installation
