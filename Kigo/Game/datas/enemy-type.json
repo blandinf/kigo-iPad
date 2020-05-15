@@ -1,0 +1,26 @@
+[
+    {
+        "name": "plane",
+        "speed": 600,
+        "width": 180,
+        "height": 60,
+        "variety": 1,
+        "location": "air"
+    },
+    {
+        "name": "cloud",
+        "speed": 500,
+        "width": 120,
+        "height": 80,
+        "variety": 4,
+        "location": "air"
+    },
+    {
+        "name": "trunk",
+        "speed": 400,
+        "width": 80,
+        "height": 150,
+        "variety": 7,
+        "location": "ground"
+    }
+]

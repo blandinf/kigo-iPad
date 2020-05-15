@@ -29,7 +29,7 @@ class GameScene: SKScene {
     let player = SKSpriteNode(imageNamed: "bird-step01")
     
     let waves = Bundle.main.decode([Wave].self, from: "waves.json")
-    let enemyTypes = Bundle.main.decode([EnemyType].self, from: "enemy-types.json")
+    let enemyTypes = Bundle.main.decode([EnemyType].self, from: "enemy-type.json")
     let bonusTypes = Bundle.main.decode([BonusType].self, from: "bonus-types.json")
     let gameOverImg = SKSpriteNode(imageNamed: "gameOver")
     var avPlayer = AVPlayer()

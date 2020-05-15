@@ -1,6 +1,6 @@
 //
 //  Waves.swift
-//  SpaceGame
+//  Kigo
 //
 //  Created by Florian on 17/04/2020.
 //  Copyright © 2020 blandinf. All rights reserved.
@@ -9,11 +9,11 @@
 import SpriteKit
 
 struct Wave: Codable {
-    struct WaveEnemy: Codable {
+    struct WaveItem: Codable {
         let position: Int
         let xOffset: CGFloat
-        let moveStraight: Bool
     }
     let name: String
-    let enemies: [WaveEnemy]
+    let enemies: [WaveItem]
+    let bonus: [WaveItem]
 }

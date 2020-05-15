@@ -3,7 +3,7 @@ import UIKit
 
 class SocketIOManager: NSObject {
     static let sharedInstance = SocketIOManager()
-    let manager = SocketManager(socketURL: URL(string: "https://40926e24.ngrok.io")!, config: [.log(true), .compress])
+    let manager = SocketManager(socketURL: URL(string: "https://d3b61fee.ngrok.io")!, config: [.log(true), .compress])
     var socket: SocketIOClient!
 
     override init() {
