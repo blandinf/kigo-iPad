@@ -41,7 +41,7 @@
 		ADEEBCA2246EFCCD00135227 /* EnemyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEBCA1246EFCCD00135227 /* EnemyType.swift */; };
 		ADEEBCA4246EFCEC00135227 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEBCA3246EFCEC00135227 /* Game.swift */; };
 		ADEEBCA6246EFD0400135227 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEBCA5246EFD0400135227 /* Wave.swift */; };
-		ADFF4BE12468569400825C3E /* waves.json in Resources */ = {isa = PBXBuildFile; fileRef = ADD67B5024684EF000108D49 /* waves.json */; };
+		ADEEBCA8246EFE2900135227 /* enemy-waves.json in Resources */ = {isa = PBXBuildFile; fileRef = ADEEBCA7246EFE2900135227 /* enemy-waves.json */; };
 		ADFF4BE2246856A900825C3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4D0AE02451B556007B8D9E /* Main.storyboard */; };
 		ADFF4BE4246856B900825C3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4D0AE32451B559007B8D9E /* Assets.xcassets */; };
 		ADFF4BE5246856C100825C3E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD4F40F124562290002AE90D /* GameScene.sks */; };
@@ -85,11 +85,11 @@
 		ADD67B2E2468093300108D49 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		ADD67B302468096C00108D49 /* SwiftSignatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSignatureView.swift; sourceTree = "<group>"; };
 		ADD67B33246846BE00108D49 /* viewWholeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewWholeScreen.swift; sourceTree = "<group>"; };
-		ADD67B5024684EF000108D49 /* waves.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = waves.json; path = ../../../../SpaceGame/client/SpaceGame/waves.json; sourceTree = "<group>"; };
 		ADEEBC9F246EFC8100135227 /* enemy-type.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "enemy-type.json"; sourceTree = "<group>"; };
 		ADEEBCA1246EFCCD00135227 /* EnemyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyType.swift; sourceTree = "<group>"; };
 		ADEEBCA3246EFCEC00135227 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		ADEEBCA5246EFD0400135227 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
+		ADEEBCA7246EFE2900135227 /* enemy-waves.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "enemy-waves.json"; sourceTree = "<group>"; };
 		F9DFDFA088D4FE93F48D47D0 /* Pods-Kigo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kigo.release.xcconfig"; path = "Target Support Files/Pods-Kigo/Pods-Kigo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,9 +174,9 @@
 		AD4F40FD245622A9002AE90D /* datas */ = {
 			isa = PBXGroup;
 			children = (
-				ADD67B5024684EF000108D49 /* waves.json */,
 				AD4DE48F246DD98A00061D32 /* bonus-types.json */,
 				ADEEBC9F246EFC8100135227 /* enemy-type.json */,
+				ADEEBCA7246EFE2900135227 /* enemy-waves.json */,
 			);
 			path = datas;
 			sourceTree = "<group>";
@@ -370,7 +370,7 @@
 				AD4DE48A246DD6D100061D32 /* GoogleService-Info.plist in Resources */,
 				ADFF4BE4246856B900825C3E /* Assets.xcassets in Resources */,
 				ADFF4BE2246856A900825C3E /* Main.storyboard in Resources */,
-				ADFF4BE12468569400825C3E /* waves.json in Resources */,
+				ADEEBCA8246EFE2900135227 /* enemy-waves.json in Resources */,
 				ADEEBCA0246EFC8100135227 /* enemy-type.json in Resources */,
 				AD4DE48C246DD71F00061D32 /* Slide.xib in Resources */,
 			);

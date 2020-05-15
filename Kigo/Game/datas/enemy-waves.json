@@ -1,0 +1,206 @@
+[
+    {
+        "name": "small",
+        "enemies": [
+            {
+                "position": 0,
+                "xOffset": 2
+            },
+            {
+                "position": 4,
+                "xOffset": 0
+            },
+            {
+                "position": 8,
+                "xOffset": 2
+            },
+            {
+                "position": 4,
+                "xOffset": 0
+            },
+            {
+                "position": 8,
+                "xOffset": 2
+            },
+            {
+                "position": 8,
+                "xOffset": 2
+            },
+            {
+                "position": 4,
+                "xOffset": 0
+            },
+            {
+                "position": 8,
+                "xOffset": 2
+            }
+        ],
+        "bonus": [
+            {
+                "position": 0,
+                "xOffset": 0,
+            },
+        ]
+    },
+    {
+        "name": "medium",
+        "enemies": [
+            {
+                "position": 2,
+                "xOffset": 0
+            },
+            {
+                "position": 1,
+                "xOffset": 2
+            },
+            {
+                "position": 0,
+                "xOffset": 4
+            },
+            {
+                "position": 6,
+                "xOffset": 1
+            },
+            {
+                "position": 7,
+                "xOffset": 3
+            },
+            {
+                "position": 8,
+                "xOffset": 5
+            },
+            {
+                "position": 6,
+                "xOffset": 1
+            },
+            {
+                "position": 7,
+                "xOffset": 3
+            },
+            {
+                "position": 8,
+                "xOffset": 5
+            },
+            {
+                "position": 8,
+                "xOffset": 2
+            },
+            {
+                "position": 4,
+                "xOffset": 0
+            },
+            {
+                "position": 8,
+                "xOffset": 2
+            }
+        ],
+        "bonus": [
+            {
+                "position": 3,
+                "xOffset": 0,
+            }
+        ]
+    },
+    {
+        "name": "large",
+        "enemies": [
+            {
+                "position": 4,
+                "xOffset": 0
+            },
+            {
+                "position": 3,
+                "xOffset": 1
+            },
+            {
+                "position": 2,
+                "xOffset": 2
+            },
+            {
+                "position": 1,
+                "xOffset": 3
+            },
+            {
+                "position": 5,
+                "xOffset": 1
+            },
+            {
+                "position": 6,
+                "xOffset": 2
+            },
+            {
+                "position": 7,
+                "xOffset": 3
+            },
+            {
+                "position": 2,
+                "xOffset": 8
+            },
+            {
+                "position": 1,
+                "xOffset": 8
+            },
+            {
+                "position": 0,
+                "xOffset": 8
+            },
+            {
+                "position": 6,
+                "xOffset": 9
+            },
+            {
+                "position": 7,
+                "xOffset": 9
+            },
+            {
+                "position": 8,
+                "xOffset": 9
+            },
+            {
+                "position": 1,
+                "xOffset": 8
+            },
+            {
+                "position": 0,
+                "xOffset": 8
+            },
+            {
+                "position": 6,
+                "xOffset": 9
+            },
+            {
+                "position": 7,
+                "xOffset": 9
+            },
+            {
+                "position": 8,
+                "xOffset": 9
+            },
+            {
+                "position": 8,
+                "xOffset": 2
+            },
+            {
+                "position": 4,
+                "xOffset": 0
+            },
+            {
+                "position": 8,
+                "xOffset": 2
+            }
+        ],
+        "bonus": [
+            {
+                "position": 0,
+                "xOffset": 0,
+            },
+        ]
+    },
+    {
+        "name": "random",
+        "enemies": [
+        ],
+        "bonus": [
+        ]
+    }
+]
