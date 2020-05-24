@@ -13,3 +13,5 @@ After, start the server with
 ```
 node index
 ```
+
+ask me for the GooleService-Info.plist file, put it at the root of the project and run the .xcworkspace
