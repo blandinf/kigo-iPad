@@ -9,22 +9,32 @@
 import UIKit
 
 class RankViewController: UIViewController {
-
+    @IBOutlet weak var winnerLbl: UILabel!
+    var winnerId: String? = nil
+    var currentPlayer: Player? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let player = currentPlayer {
+            if winnerId == player.id {
+                winnerLbl.text = "\(player.name) YOU WON"
+            } else {
+                winnerLbl.text = "\(player.name) YOU LOOSE"
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func backToHome(_ sender: Any) {
+        if let json = Player.fromObjectToJson(currentPlayer: currentPlayer) {
+            SocketIOManager.sharedInstance.emit(event: "playerDisconnect", message: ["player": json])
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeViewController, animated: true)
+        }
     }
-    */
-
+    
+    @IBAction func restart(_ sender: Any) {
+        
+    }
+    
 }

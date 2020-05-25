@@ -59,11 +59,11 @@ class GameViewController: UIViewController {
         SocketIOManager.sharedInstance.listen(event: "winnerIs", callback: { (data, ack) in
             if let player = self.currentPlayer {
                 if let result = data[0] as? String {
-                    if player.id == result {
-                         scene.displayYourRank(true)
-                    } else {
-                         scene.displayYourRank()
-                    }
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    let rankViewController = storyBoard.instantiateViewController(withIdentifier: "RankViewController") as! RankViewController
+                    rankViewController.winnerId = result
+                    rankViewController.currentPlayer = player
+                    self.navigationController?.pushViewController(rankViewController, animated: true)
                 }
             }
         })

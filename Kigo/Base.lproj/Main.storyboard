@@ -10,7 +10,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Kigo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Kigo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,11 +189,59 @@
                     <navigationItem key="navigationItem" id="Jf1-ko-fXa"/>
                     <connections>
                         <outlet property="skView" destination="cXN-WV-Ue3" id="XcQ-Lj-QP1"/>
+                        <segue destination="CIX-zi-vpw" kind="show" identifier="RankViewController" id="IB1-rj-glN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyr-s6-JoX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4852" y="144"/>
+        </scene>
+        <!--Rank View Controller-->
+        <scene sceneID="OEJ-LO-V76">
+            <objects>
+                <viewController storyboardIdentifier="RankViewController" id="CIX-zi-vpw" customClass="RankViewController" customModule="Kigo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gzz-5N-OAr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEr-0D-jyO">
+                                <rect key="frame" x="94" y="449" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Accueil"/>
+                                <connections>
+                                    <action selector="backToHome:" destination="CIX-zi-vpw" eventType="touchUpInside" id="1HQ-Pv-wfU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RC4-nR-uMs">
+                                <rect key="frame" x="275" y="449" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Rejouer"/>
+                                <connections>
+                                    <action selector="restart:" destination="CIX-zi-vpw" eventType="touchUpInside" id="WaW-cI-E5d"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="av2-86-eDW">
+                                <rect key="frame" x="116" y="179" width="183" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="av2-86-eDW" firstAttribute="centerX" secondItem="jF2-bM-DBP" secondAttribute="centerX" id="UP2-LM-0xb"/>
+                            <constraint firstItem="av2-86-eDW" firstAttribute="top" secondItem="jF2-bM-DBP" secondAttribute="top" constant="90" id="wOf-fw-2Jx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jF2-bM-DBP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oYl-Rt-v9Z"/>
+                    <connections>
+                        <outlet property="winnerLbl" destination="av2-86-eDW" id="rP5-ld-0qu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23M-yh-CNf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5737.68115942029" y="145.98214285714286"/>
         </scene>
         <!--Who View Controller-->
         <scene sceneID="5dH-SP-y8h">
