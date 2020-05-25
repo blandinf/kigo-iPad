@@ -17,12 +17,16 @@ struct Player: Codable {
         self.name = name
     }
     
-    static func fromObjectToJson(player: Player) -> String? {
+    static func fromObjectToJson(currentPlayer: Player?) -> String? {
         let jsonEncoder = JSONEncoder()
-        do {
-            let jsonData = try jsonEncoder.encode(player)
-            return String(data: jsonData, encoding: .utf8)
-        } catch {
+        if let player = currentPlayer {
+            let jsonData = try! jsonEncoder.encode(player)
+            if let json = String(data: jsonData, encoding: .utf8) {
+                return json
+            } else {
+                return nil
+            }
+        } else {
             return nil
         }
     }

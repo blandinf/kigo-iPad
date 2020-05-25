@@ -138,32 +138,14 @@ class GameViewController: UIViewController {
 extension GameViewController: GameDelegate {
     
     func gameOver() {
-        let jsonEncoder = JSONEncoder()
-        do {
-            if let player = currentPlayer {
-                let jsonData = try jsonEncoder.encode(player)
-                print(jsonData)
-                if let json = String(data: jsonData, encoding: .utf8) {
-                    SocketIOManager.sharedInstance.emit(event: "playerIsDead", message: ["player": json])
-                }
-            }
-        } catch {
-            print("error")
+        if let json = Player.fromObjectToJson(currentPlayer: currentPlayer) {
+            SocketIOManager.sharedInstance.emit(event: "playerIsDead", message: ["player": json])
         }
     }
     
     func catchBonus(type: String) {
-        let jsonEncoder = JSONEncoder()
-        do {
-           if let player = currentPlayer {
-               let jsonData = try jsonEncoder.encode(player)
-               print(jsonData)
-               if let json = String(data: jsonData, encoding: .utf8) {
-                    SocketIOManager.sharedInstance.emit(event: "catchBonus", message: ["player": json, "bonus": type])
-               }
-           }
-        } catch {
-           print("error")
+        if let json = Player.fromObjectToJson(currentPlayer: currentPlayer) {
+            SocketIOManager.sharedInstance.emit(event: "catchBonus", message: ["player": json, "bonus": type])
         }
     }
 }

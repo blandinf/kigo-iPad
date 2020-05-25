@@ -52,18 +52,11 @@ class WaitingViewController: UIViewController {
     }
     
     func sendToServer(player: Player) {
-        let jsonEncoder = JSONEncoder()
-        do {
-            let jsonData = try jsonEncoder.encode(player)
-            print(jsonData)
-            if let json = String(data: jsonData, encoding: .utf8) {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                    print("send playerConnect")
-                    SocketIOManager.sharedInstance.emit(event: "playerConnect", message: ["player": json])
-                }
+        if let json = Player.fromObjectToJson(currentPlayer: player) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+               print("send playerConnect")
+               SocketIOManager.sharedInstance.emit(event: "playerConnect", message: ["player": json])
             }
-        } catch {
-            print("error")
         }
     }
 }

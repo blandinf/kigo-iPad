@@ -3,7 +3,7 @@ import UIKit
 
 class SocketIOManager: NSObject {
     static let sharedInstance = SocketIOManager()
-    let manager = SocketManager(socketURL: URL(string: "https://serene-meadow-06111.herokuapp.com/")!, config: [.log(true), .compress])
+    let manager = SocketManager(socketURL: URL(string: "https://c3a3b8be.ngrok.io")!, config: [.log(true), .compress])
     var socket: SocketIOClient!
 
     override init() {
@@ -11,14 +11,18 @@ class SocketIOManager: NSObject {
         socket = manager.defaultSocket
     }
 
-    func emit(event: String, message: [String: Any]){
+    func emit(event: String, message: [String: Any]) {
 //        print("Sending Message: \([message])")
         socket.emit(event, with: [message])
     }
     
-    func emit(event: String, items: SocketData){
+    func emit(event: String, items: SocketData) {
 //        print("Sending Message: \(items)")
         socket.emit(event, items)
+    }
+    
+    func emit(event: String) {
+        socket.emit(event, with: [])
     }
     
     func listen(event: String, callback: @escaping NormalCallback) {
