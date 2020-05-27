@@ -43,6 +43,8 @@
 		ADEEBCA6246EFD0400135227 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEBCA5246EFD0400135227 /* Wave.swift */; };
 		ADEEBCA8246EFE2900135227 /* enemy-waves.json in Resources */ = {isa = PBXBuildFile; fileRef = ADEEBCA7246EFE2900135227 /* enemy-waves.json */; };
 		ADEEBCAE247AE01E00135227 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEBCAD247AE01E00135227 /* RankViewController.swift */; };
+		ADEEBCB0247ED47700135227 /* BankGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEBCAF247ED47500135227 /* BankGameViewController.swift */; };
+		ADEEBCB3247ED4FC00135227 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEBCB2247ED4FC00135227 /* GameCollectionViewCell.swift */; };
 		ADFF4BE2246856A900825C3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4D0AE02451B556007B8D9E /* Main.storyboard */; };
 		ADFF4BE4246856B900825C3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4D0AE32451B559007B8D9E /* Assets.xcassets */; };
 		ADFF4BE5246856C100825C3E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD4F40F124562290002AE90D /* GameScene.sks */; };
@@ -92,6 +94,8 @@
 		ADEEBCA5246EFD0400135227 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
 		ADEEBCA7246EFE2900135227 /* enemy-waves.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "enemy-waves.json"; sourceTree = "<group>"; };
 		ADEEBCAD247AE01E00135227 /* RankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
+		ADEEBCAF247ED47500135227 /* BankGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankGameViewController.swift; sourceTree = "<group>"; };
+		ADEEBCB2247ED4FC00135227 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		F9DFDFA088D4FE93F48D47D0 /* Pods-Kigo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kigo.release.xcconfig"; path = "Target Support Files/Pods-Kigo/Pods-Kigo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,6 +223,7 @@
 		ADD67B3524684B8100108D49 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				ADEEBCB1247ED4DC00135227 /* cells */,
 				ADD67B3C24684BFA00108D49 /* controllers */,
 				ADD67B3B24684BE400108D49 /* managers */,
 				ADD67B3A24684BDB00108D49 /* protocols */,
@@ -289,6 +294,7 @@
 				AD4DE497246DDA3900061D32 /* OnBoardingViewController.swift */,
 				AD4DE499246DDAA900061D32 /* WaitingViewController.swift */,
 				ADEEBCAD247AE01E00135227 /* RankViewController.swift */,
+				ADEEBCAF247ED47500135227 /* BankGameViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -299,6 +305,14 @@
 				ADD67B302468096C00108D49 /* SwiftSignatureView.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		ADEEBCB1247ED4DC00135227 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				ADEEBCB2247ED4FC00135227 /* GameCollectionViewCell.swift */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,6 +445,7 @@
 				AD9409D4246D93320002E9B4 /* ChildrenService.swift in Sources */,
 				ADD67B2F2468093300108D49 /* MapViewController.swift in Sources */,
 				AD4DE49A246DDAA900061D32 /* WaitingViewController.swift in Sources */,
+				ADEEBCB3247ED4FC00135227 /* GameCollectionViewCell.swift in Sources */,
 				AD4DE48E246DD93200061D32 /* BonusNode.swift in Sources */,
 				AD4F40F024562281002AE90D /* GameScene.swift in Sources */,
 				AD9409E0246D94B30002E9B4 /* WhoViewController.swift in Sources */,
@@ -446,6 +461,7 @@
 				ADD67B312468096C00108D49 /* SwiftSignatureView.swift in Sources */,
 				ADEEBCA4246EFCEC00135227 /* Game.swift in Sources */,
 				AD4DE484246DD5D500061D32 /* SocketIOManager.swift in Sources */,
+				ADEEBCB0247ED47700135227 /* BankGameViewController.swift in Sources */,
 				AD4D0ADF2451B556007B8D9E /* HomeViewController.swift in Sources */,
 				AD4DE486246DD62C00061D32 /* Slide.swift in Sources */,
 				AD4F40FA2456229B002AE90D /* Bundle-Decoding.swift in Sources */,

@@ -19,20 +19,25 @@ class WaitingViewController: UIViewController {
     }
     
     func initializeChild () {
-        if let id = UserDefaults.standard.string(forKey: "connectedChildId") {
-            ChildrenService.getChild(id: id) { child, error in
-                if let err = error {
-                    print(err)
-                    return
-                }
-                self.currentChild = child
-                if let child = self.currentChild {
-                    self.usernameLbl.text = child.firstname
-                    self.player = Player(name: child.firstname)
-                    self.sendToServer(player: self.player!)
-                }
-            }
+        if let currentPlayer = player {
+            self.usernameLbl.text = currentPlayer.name
+        } else {
+            if let id = UserDefaults.standard.string(forKey: "connectedChildId") {
+               ChildrenService.getChild(id: id) { child, error in
+                   if let err = error {
+                       print(err)
+                       return
+                   }
+                   self.currentChild = child
+                   if let child = self.currentChild {
+                       self.usernameLbl.text = child.firstname
+                       self.player = Player(name: child.firstname)
+                       self.sendToServer(player: self.player!)
+                   }
+               }
+           }
         }
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {

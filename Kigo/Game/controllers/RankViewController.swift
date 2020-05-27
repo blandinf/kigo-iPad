@@ -34,7 +34,13 @@ class RankViewController: UIViewController {
     }
     
     @IBAction func restart(_ sender: Any) {
-        
+        if let json = Player.fromObjectToJson(currentPlayer: currentPlayer) {
+            SocketIOManager.sharedInstance.emit(event: "playerDisconnect", message: ["player": json])
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let waitingViewController = storyBoard.instantiateViewController(withIdentifier: "WaitingViewController") as! WaitingViewController
+            waitingViewController.player = currentPlayer
+            self.navigationController?.pushViewController(waitingViewController, animated: true)
+        }
     }
     
 }
