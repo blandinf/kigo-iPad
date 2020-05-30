@@ -10,7 +10,7 @@ run the server and GooleService-Info.plist file
 ```
 and after : 
 ```
-put the file at the root of the project 
-and run the .xcworkspace
+run the .xcworkspace
+and put the file at the root of the project 
 ```
 
