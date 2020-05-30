@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
     var stillImageOutput: AVCapturePhotoOutput!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     var currentPlayer: Player? = nil
+    var currentChild: Child? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,12 +59,15 @@ class GameViewController: UIViewController {
     func whoIsTheWinner(scene: GameScene) {
         SocketIOManager.sharedInstance.listen(event: "winnerIs", callback: { (data, ack) in
             print("winnerIs called")
-            if let player = self.currentPlayer {
+            if let player = self.currentPlayer,
+                let child = self.currentChild
+            {
                 if let result = data[0] as? String {
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                     let rankViewController = storyBoard.instantiateViewController(withIdentifier: "RankViewController") as! RankViewController
                     rankViewController.winnerId = result
                     rankViewController.currentPlayer = player
+                    rankViewController.currentChild = child
                     self.navigationController?.pushViewController(rankViewController, animated: true)
                 }
             }

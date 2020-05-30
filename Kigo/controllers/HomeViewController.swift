@@ -84,7 +84,7 @@ class HomeViewController: UIViewController {
                return
            }
            self.games = gameArray
-            print(self.games)
+            print("games \(self.games)")
            self.myCollectionView.reloadData()
        }
     }

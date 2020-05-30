@@ -29,9 +29,7 @@ class BoardingViewController: UIViewController {
         super.viewDidLoad()
         menuView.backgroundColor = .clear
         nextView.backgroundColor = .clear
-        
-        closeBtn.image = UIImage(named: "closeBtn")
-        
+                
         let closeBtnClick = UITapGestureRecognizer(target: self, action: #selector(BoardingViewController.closeButtonClicked));
         closeBtn.addGestureRecognizer(closeBtnClick)
         closeBtn.isUserInteractionEnabled = true
