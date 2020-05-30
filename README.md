@@ -4,14 +4,13 @@ He transforms your windows into fabulous screens for children.
 They will able to draw, play together, sleep with beautiful animations and all of that's on top of the scenery.
 
 ## Installation
-Move to /server folder and run this command in the terminal
+You just have to ask me to : 
 ```
-npm install
+run the server and GooleService-Info.plist file
+```
+and after : 
+```
+put the file at the root of the project 
+and run the .xcworkspace
 ```
 
-After, start the server with
-```
-node index
-```
-
-ask me for the GooleService-Info.plist file, put it at the root of the project and run the .xcworkspace
