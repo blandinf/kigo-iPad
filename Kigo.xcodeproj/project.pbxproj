@@ -10,6 +10,7 @@
 		32905491EB713D0A625B8DBA /* libPods-Kigo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2E2CF74A10428B9A0F9AA8 /* libPods-Kigo.a */; };
 		AD4C7CDE2481333300F364ED /* Baloo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD4C7CDD2481333300F364ED /* Baloo-Regular.ttf */; };
 		AD4C7CE02481389400F364ED /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD4C7CDF2481389300F364ED /* Nunito-Regular.ttf */; };
+		AD4C7CE224813F3B00F364ED /* BoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4C7CE124813F3B00F364ED /* BoardingViewController.swift */; };
 		AD4D0ADB2451B556007B8D9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D0ADA2451B556007B8D9E /* AppDelegate.swift */; };
 		AD4D0ADD2451B556007B8D9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D0ADC2451B556007B8D9E /* SceneDelegate.swift */; };
 		AD4D0ADF2451B556007B8D9E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D0ADE2451B556007B8D9E /* HomeViewController.swift */; };
@@ -23,7 +24,6 @@
 		AD4DE492246DD9AA00061D32 /* Bonus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE491246DD9AA00061D32 /* Bonus.swift */; };
 		AD4DE494246DD9C400061D32 /* BonusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE493246DD9C400061D32 /* BonusType.swift */; };
 		AD4DE496246DD9E500061D32 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE495246DD9E500061D32 /* Player.swift */; };
-		AD4DE498246DDA3900061D32 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE497246DDA3900061D32 /* OnBoardingViewController.swift */; };
 		AD4DE49A246DDAA900061D32 /* WaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE499246DDAA900061D32 /* WaitingViewController.swift */; };
 		AD4F40EB24562235002AE90D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F40EA24562235002AE90D /* GameViewController.swift */; };
 		AD4F40F024562281002AE90D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F40EF24562281002AE90D /* GameScene.swift */; };
@@ -45,7 +45,6 @@
 		ADEEBCA6246EFD0400135227 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEBCA5246EFD0400135227 /* Wave.swift */; };
 		ADEEBCA8246EFE2900135227 /* enemy-waves.json in Resources */ = {isa = PBXBuildFile; fileRef = ADEEBCA7246EFE2900135227 /* enemy-waves.json */; };
 		ADEEBCAE247AE01E00135227 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEBCAD247AE01E00135227 /* RankViewController.swift */; };
-		ADEEBCB0247ED47700135227 /* BankGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEBCAF247ED47500135227 /* BankGameViewController.swift */; };
 		ADEEBCB3247ED4FC00135227 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEBCB2247ED4FC00135227 /* GameCollectionViewCell.swift */; };
 		ADFF4BE2246856A900825C3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4D0AE02451B556007B8D9E /* Main.storyboard */; };
 		ADFF4BE4246856B900825C3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4D0AE32451B559007B8D9E /* Assets.xcassets */; };
@@ -58,6 +57,7 @@
 		9C2E2CF74A10428B9A0F9AA8 /* libPods-Kigo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kigo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4C7CDD2481333300F364ED /* Baloo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo-Regular.ttf"; sourceTree = "<group>"; };
 		AD4C7CDF2481389300F364ED /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		AD4C7CE124813F3B00F364ED /* BoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingViewController.swift; sourceTree = "<group>"; };
 		AD4D0AD72451B556007B8D9E /* Kigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4D0ADA2451B556007B8D9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD4D0ADC2451B556007B8D9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +76,6 @@
 		AD4DE491246DD9AA00061D32 /* Bonus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bonus.swift; sourceTree = "<group>"; };
 		AD4DE493246DD9C400061D32 /* BonusType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusType.swift; sourceTree = "<group>"; };
 		AD4DE495246DD9E500061D32 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		AD4DE497246DDA3900061D32 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		AD4DE499246DDAA900061D32 /* WaitingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingViewController.swift; sourceTree = "<group>"; };
 		AD4F40EA24562235002AE90D /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AD4F40EF24562281002AE90D /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -98,7 +97,6 @@
 		ADEEBCA5246EFD0400135227 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
 		ADEEBCA7246EFE2900135227 /* enemy-waves.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "enemy-waves.json"; sourceTree = "<group>"; };
 		ADEEBCAD247AE01E00135227 /* RankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
-		ADEEBCAF247ED47500135227 /* BankGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankGameViewController.swift; sourceTree = "<group>"; };
 		ADEEBCB2247ED4FC00135227 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		F9DFDFA088D4FE93F48D47D0 /* Pods-Kigo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kigo.release.xcconfig"; path = "Target Support Files/Pods-Kigo/Pods-Kigo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -305,10 +303,9 @@
 			isa = PBXGroup;
 			children = (
 				AD4F40EA24562235002AE90D /* GameViewController.swift */,
-				AD4DE497246DDA3900061D32 /* OnBoardingViewController.swift */,
 				AD4DE499246DDAA900061D32 /* WaitingViewController.swift */,
 				ADEEBCAD247AE01E00135227 /* RankViewController.swift */,
-				ADEEBCAF247ED47500135227 /* BankGameViewController.swift */,
+				AD4C7CE124813F3B00F364ED /* BoardingViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -468,7 +465,6 @@
 				ADEEBCA6246EFD0400135227 /* Wave.swift in Sources */,
 				ADEEBCAE247AE01E00135227 /* RankViewController.swift in Sources */,
 				AD4DE482246DD5B300061D32 /* GameDelegate.swift in Sources */,
-				AD4DE498246DDA3900061D32 /* OnBoardingViewController.swift in Sources */,
 				AD9409DC246D93720002E9B4 /* APIGame.swift in Sources */,
 				ADD67B2D2468090400108D49 /* DrawViewController.swift in Sources */,
 				AD4DE496246DD9E500061D32 /* Player.swift in Sources */,
@@ -477,11 +473,11 @@
 				ADD67B312468096C00108D49 /* SwiftSignatureView.swift in Sources */,
 				ADEEBCA4246EFCEC00135227 /* Game.swift in Sources */,
 				AD4DE484246DD5D500061D32 /* SocketIOManager.swift in Sources */,
-				ADEEBCB0247ED47700135227 /* BankGameViewController.swift in Sources */,
 				AD4D0ADF2451B556007B8D9E /* HomeViewController.swift in Sources */,
 				AD4DE486246DD62C00061D32 /* Slide.swift in Sources */,
 				AD4F40FA2456229B002AE90D /* Bundle-Decoding.swift in Sources */,
 				ADC568ED246EFBB900376984 /* EnemyNode.swift in Sources */,
+				AD4C7CE224813F3B00F364ED /* BoardingViewController.swift in Sources */,
 				ADEEBCA2246EFCCD00135227 /* EnemyType.swift in Sources */,
 				AD4D0ADB2451B556007B8D9E /* AppDelegate.swift in Sources */,
 				AD4D0ADD2451B556007B8D9E /* SceneDelegate.swift in Sources */,

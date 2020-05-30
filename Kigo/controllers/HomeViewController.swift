@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
     
     var games = [APIGame]()
     var currentChild: Child?
+    var currentGame: APIGame?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,8 @@ class HomeViewController: UIViewController {
         let drawBtnClick = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.drawButtonClicked));
         drawButton.addGestureRecognizer(drawBtnClick)
         drawButton.isUserInteractionEnabled = true
+        
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,6 +104,16 @@ class HomeViewController: UIViewController {
             drawButton.image = UIImage(named: "drawBtn")
         } else {
             drawButton.image = UIImage(named: "closeBtn")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "OnBoardingViewController" {
+            if let destination = segue.destination as? BoardingViewController {
+                if let myCurrentGame = currentGame {
+                    destination.currentGame = myCurrentGame
+                }
+            }
         }
     }
     
@@ -167,8 +180,10 @@ extension HomeViewController: UICollectionViewDataSource {
         cell.gameLbl.text = games[indexPath.row].name
         
         cell.listenToImgClicked { () in
+            self.currentGame = self.games[indexPath.row]
             if self.games[indexPath.row].name == "Les obstacles" {
                 self.performSegue(withIdentifier: "OnBoardingViewController", sender: nil)
+                self.gameButtonClicked()
             }
         }
 

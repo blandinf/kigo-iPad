@@ -57,6 +57,7 @@ class GameViewController: UIViewController {
     
     func whoIsTheWinner(scene: GameScene) {
         SocketIOManager.sharedInstance.listen(event: "winnerIs", callback: { (data, ack) in
+            print("winnerIs called")
             if let player = self.currentPlayer {
                 if let result = data[0] as? String {
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -138,6 +139,7 @@ class GameViewController: UIViewController {
 extension GameViewController: GameDelegate {
     
     func gameOver() {
+        print("playerIsDead")
         if let json = Player.fromObjectToJson(currentPlayer: currentPlayer) {
             SocketIOManager.sharedInstance.emit(event: "playerIsDead", message: ["player": json])
         }
