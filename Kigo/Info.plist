@@ -4,6 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>PTSans-Bold.ttf</string>
+		<string>BowlbyOne-Regular.ttf</string>
 		<string>Nunito-Regular.ttf</string>
 		<string>Baloo-Regular.ttf</string>
 	</array>

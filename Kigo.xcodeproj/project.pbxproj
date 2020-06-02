@@ -8,16 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		32905491EB713D0A625B8DBA /* libPods-Kigo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2E2CF74A10428B9A0F9AA8 /* libPods-Kigo.a */; };
+		AD3725EE248393F4006828D2 /* BowlbyOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05D23A24839178006FB0F2 /* BowlbyOne-Regular.ttf */; };
+		AD3725F0248395FD006828D2 /* PTSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD3725EF248395FD006828D2 /* PTSans-Bold.ttf */; };
 		AD4C7CDE2481333300F364ED /* Baloo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD4C7CDD2481333300F364ED /* Baloo-Regular.ttf */; };
 		AD4C7CE02481389400F364ED /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD4C7CDF2481389300F364ED /* Nunito-Regular.ttf */; };
 		AD4C7CE224813F3B00F364ED /* BoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4C7CE124813F3B00F364ED /* BoardingViewController.swift */; };
+		AD4C7CE624825E6A00F364ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD4C7CE524825E6A00F364ED /* GoogleService-Info.plist */; };
 		AD4D0ADB2451B556007B8D9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D0ADA2451B556007B8D9E /* AppDelegate.swift */; };
 		AD4D0ADD2451B556007B8D9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D0ADC2451B556007B8D9E /* SceneDelegate.swift */; };
 		AD4D0ADF2451B556007B8D9E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D0ADE2451B556007B8D9E /* HomeViewController.swift */; };
 		AD4DE482246DD5B300061D32 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE481246DD5B300061D32 /* GameDelegate.swift */; };
 		AD4DE484246DD5D500061D32 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE483246DD5D500061D32 /* SocketIOManager.swift */; };
 		AD4DE486246DD62C00061D32 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE485246DD62C00061D32 /* Slide.swift */; };
-		AD4DE48A246DD6D100061D32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD4DE489246DD6D100061D32 /* GoogleService-Info.plist */; };
 		AD4DE48C246DD71F00061D32 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4DE48B246DD71F00061D32 /* Slide.xib */; };
 		AD4DE48E246DD93200061D32 /* BonusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4DE48D246DD93200061D32 /* BonusNode.swift */; };
 		AD4DE490246DD98A00061D32 /* bonus-types.json in Resources */ = {isa = PBXBuildFile; fileRef = AD4DE48F246DD98A00061D32 /* bonus-types.json */; };
@@ -55,9 +57,12 @@
 /* Begin PBXFileReference section */
 		73B765928ECFC923DDAD5C89 /* Pods-Kigo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kigo.debug.xcconfig"; path = "Target Support Files/Pods-Kigo/Pods-Kigo.debug.xcconfig"; sourceTree = "<group>"; };
 		9C2E2CF74A10428B9A0F9AA8 /* libPods-Kigo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kigo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD05D23A24839178006FB0F2 /* BowlbyOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BowlbyOne-Regular.ttf"; sourceTree = "<group>"; };
+		AD3725EF248395FD006828D2 /* PTSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Bold.ttf"; sourceTree = "<group>"; };
 		AD4C7CDD2481333300F364ED /* Baloo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo-Regular.ttf"; sourceTree = "<group>"; };
 		AD4C7CDF2481389300F364ED /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		AD4C7CE124813F3B00F364ED /* BoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingViewController.swift; sourceTree = "<group>"; };
+		AD4C7CE524825E6A00F364ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD4D0AD72451B556007B8D9E /* Kigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4D0ADA2451B556007B8D9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD4D0ADC2451B556007B8D9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +74,6 @@
 		AD4DE481246DD5B300061D32 /* GameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		AD4DE483246DD5D500061D32 /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
 		AD4DE485246DD62C00061D32 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
-		AD4DE489246DD6D100061D32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Documents/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD4DE48B246DD71F00061D32 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		AD4DE48D246DD93200061D32 /* BonusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusNode.swift; sourceTree = "<group>"; };
 		AD4DE48F246DD98A00061D32 /* bonus-types.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "bonus-types.json"; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 		AD4C7CDC248132F400F364ED /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				AD3725EF248395FD006828D2 /* PTSans-Bold.ttf */,
+				AD05D23A24839178006FB0F2 /* BowlbyOne-Regular.ttf */,
 				AD4C7CDF2481389300F364ED /* Nunito-Regular.ttf */,
 				AD4C7CDD2481333300F364ED /* Baloo-Regular.ttf */,
 			);
@@ -173,7 +179,7 @@
 				AD4D0AE02451B556007B8D9E /* Main.storyboard */,
 				AD4D0ADA2451B556007B8D9E /* AppDelegate.swift */,
 				AD4D0AE52451B559007B8D9E /* LaunchScreen.storyboard */,
-				AD4DE489246DD6D100061D32 /* GoogleService-Info.plist */,
+				AD4C7CE524825E6A00F364ED /* GoogleService-Info.plist */,
 				AD4D0AE82451B559007B8D9E /* Info.plist */,
 				ADD67B3D24684C8B00108D49 /* utils */,
 			);
@@ -392,12 +398,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD3725EE248393F4006828D2 /* BowlbyOne-Regular.ttf in Resources */,
 				AD4C7CE02481389400F364ED /* Nunito-Regular.ttf in Resources */,
 				ADFF4BE6246856CE00825C3E /* LaunchScreen.storyboard in Resources */,
 				AD4DE490246DD98A00061D32 /* bonus-types.json in Resources */,
 				ADFF4BE5246856C100825C3E /* GameScene.sks in Resources */,
-				AD4DE48A246DD6D100061D32 /* GoogleService-Info.plist in Resources */,
 				ADFF4BE4246856B900825C3E /* Assets.xcassets in Resources */,
+				AD4C7CE624825E6A00F364ED /* GoogleService-Info.plist in Resources */,
+				AD3725F0248395FD006828D2 /* PTSans-Bold.ttf in Resources */,
 				AD4C7CDE2481333300F364ED /* Baloo-Regular.ttf in Resources */,
 				ADFF4BE2246856A900825C3E /* Main.storyboard in Resources */,
 				ADEEBCA8246EFE2900135227 /* enemy-waves.json in Resources */,

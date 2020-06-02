@@ -13,30 +13,38 @@ class BoardingViewController: UIViewController {
     var captureSession: AVCaptureSession!
     var stillImageOutput: AVCapturePhotoOutput!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
+    
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var closeBtn: UIImageView!
-    
-    @IBOutlet weak var nextView: UIView!
-    
+        
+    @IBOutlet weak var boardingDescription: UILabel!
     @IBOutlet weak var boardingImg: UIImageView!
     @IBOutlet weak var boardingView: UIView!
-    @IBOutlet weak var boardingDescription: UILabel!
-    @IBOutlet weak var boardingCurrentPage: UISegmentedControl!
+    
+    @IBOutlet weak var previousBtn: UIButton!
+    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var navigationView: UIView!
+    
+    var currentPage = 0
     
     var currentGame: APIGame?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         menuView.backgroundColor = .clear
-        nextView.backgroundColor = .clear
+        boardingView.layer.cornerRadius = 15
+        boardingImg.layer.cornerRadius = 10
                 
         let closeBtnClick = UITapGestureRecognizer(target: self, action: #selector(BoardingViewController.closeButtonClicked));
         closeBtn.addGestureRecognizer(closeBtnClick)
         closeBtn.isUserInteractionEnabled = true
         
+        navigationView.layer.cornerRadius = 15
+        navigationView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        
         if let game = currentGame {
-            boardingDescription.text = game.boardingInstructions[boardingCurrentPage.selectedSegmentIndex]
-            boardingImg.image = UIImage(named: game.boardingImages[boardingCurrentPage.selectedSegmentIndex])
+            boardingDescription.text = game.boardingInstructions[currentPage]
+            boardingImg.image = UIImage(named: game.boardingImages[currentPage])
         }
     }
     
@@ -44,10 +52,27 @@ class BoardingViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func currentPageChanges(_ sender: UISegmentedControl) {
+    @IBAction func previous(_ sender: Any) {
+        if currentPage > 0 {
+            currentPage = currentPage - 1
+            if let game = currentGame {
+                boardingDescription.text = game.boardingInstructions[currentPage]
+                boardingImg.image = UIImage(named: game.boardingImages[currentPage])
+            }
+        }
+    }
+    
+    @IBAction func next(_ sender: Any) {
         if let game = currentGame {
-            boardingDescription.text = game.boardingInstructions[sender.selectedSegmentIndex]
-            boardingImg.image = UIImage(named: game.boardingImages[sender.selectedSegmentIndex])
+            if currentPage < game.boardingInstructions.count - 1 {
+                currentPage = currentPage + 1
+                boardingDescription.text = game.boardingInstructions[currentPage]
+                boardingImg.image = UIImage(named: game.boardingImages[currentPage])
+            } else if currentPage == game.boardingInstructions.count - 1 {
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let waitingViewController = storyBoard.instantiateViewController(withIdentifier: "WaitingViewController") as! WaitingViewController
+                self.navigationController?.pushViewController(waitingViewController, animated: true)
+            }
         }
     }
     
@@ -81,9 +106,7 @@ class BoardingViewController: UIViewController {
         videoPreviewLayer.connection?.videoOrientation = .landscapeRight
         view.layer.addSublayer(videoPreviewLayer)
         view.addSubview(menuView)
-        view.addSubview(boardingView)
-        view.addSubview(nextView)
-        
+        view.addSubview(boardingView)        
         
         DispatchQueue.global(qos: .userInitiated).async { //[weak self] in
             self.captureSession.startRunning()

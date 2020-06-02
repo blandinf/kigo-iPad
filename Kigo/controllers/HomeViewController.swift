@@ -19,7 +19,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var menuView: UIView!
     
     @IBOutlet weak var drawButton: UIImageView!
+    @IBOutlet weak var drawView: SwiftSignatureView!
     
+    @IBOutlet weak var kitView: UIView!
+    @IBOutlet weak var deleteDrawBtn: UIImageView!
     
     @IBOutlet weak var gameButton: UIImageView!
     @IBOutlet weak var gameView: UIView!
@@ -32,8 +35,14 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
+        
         menuView.backgroundColor = .clear
         gameView.layer.cornerRadius = 20
+        
+        drawView.backgroundColor = .clear
+        drawView.pinEdges(to: view)
+        
+        kitView.layer.cornerRadius = 30
         
         gameButton.image = UIImage(named: "gameBtn")
         drawButton.image = UIImage(named: "drawBtn")
@@ -99,11 +108,23 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @IBAction func deleteDraw(_ sender: Any) {
+        if drawView.isHidden == false {
+            drawView.clear()
+        }
+    }
+    
     @objc func drawButtonClicked() {
         if drawButton.image == UIImage(named: "closeBtn") {
             drawButton.image = UIImage(named: "drawBtn")
+            drawView.isHidden = true
+            kitView.isHidden = true
+            gameButton.center.x = gameButton.center.x - 50
         } else {
             drawButton.image = UIImage(named: "closeBtn")
+            drawView.isHidden = false
+            kitView.isHidden = false
+            gameButton.center.x = gameButton.center.x + 50
         }
     }
     
@@ -147,6 +168,8 @@ class HomeViewController: UIViewController {
         videoPreviewLayer.connection?.videoOrientation = .landscapeRight
         view.layer.addSublayer(videoPreviewLayer)
         view.addSubview(gameView)
+        view.addSubview(drawView)
+        view.addSubview(kitView)
         view.addSubview(menuView)
         
         DispatchQueue.global(qos: .userInitiated).async { //[weak self] in

@@ -16,13 +16,19 @@ class RankViewController: UIViewController {
     var currentPlayer: Player? = nil
     var currentChild: Child? = nil
     @IBOutlet weak var rankView: UIView!
+    @IBOutlet weak var navigationView: UIView!
     
+    @IBOutlet weak var medalImg: UIImageView!
     var captureSession: AVCaptureSession!
     var stillImageOutput: AVCapturePhotoOutput!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rankView.layer.cornerRadius = 15
+        navigationView.layer.cornerRadius = 15
+        navigationView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        
         if let player = currentPlayer,
             let child = currentChild
         {
@@ -36,6 +42,7 @@ class RankViewController: UIViewController {
             } else {
                 winnerLbl.text = "DOMMAGE \(player.name.uppercased()), TU AS PERDU !"
                 descriptionLbl.text = "RETENTE TA CHANCE !"
+                medalImg.image = UIImage(named: "bronze-medal")
             }
         }
     }
