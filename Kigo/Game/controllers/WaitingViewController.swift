@@ -8,7 +8,6 @@
 
 import UIKit
 import AVFoundation
-import FullMaterialLoader
 
 class WaitingViewController: UIViewController {
     var player: Player?
@@ -30,9 +29,9 @@ class WaitingViewController: UIViewController {
         closeBtn.addGestureRecognizer(closeBtnClick)
         closeBtn.isUserInteractionEnabled = true
         
-        var indicator = MaterialLoadingIndicator(frame: CGRect(x:waitingView.center.x/2, y:view.center.y/2 - 75, width: 40, height: 40))
-        self.waitingView.addSubview(indicator)
-        indicator.startAnimating()
+//        var indicator = MaterialLoadingIndicator(frame: CGRect(x:waitingView.center.x/2, y:view.center.y/2 - 75, width: 40, height: 40))
+//        self.waitingView.addSubview(indicator)
+//        indicator.startAnimating()
         
         initializeChild()
     }
