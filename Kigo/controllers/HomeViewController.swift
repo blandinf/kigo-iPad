@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 import AVFoundation
 import Firebase
 
@@ -31,6 +32,10 @@ class HomeViewController: UIViewController {
     var currentGame: APIGame?
     var currentActivity: String = ""
     var gameLaunched = false
+    var playerItem:AVPlayerItem?
+    var player:AVPlayer?
+    var playerLayer: AVPlayerLayer?
+    var animationLaunched = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +43,7 @@ class HomeViewController: UIViewController {
         myCollectionView.dataSource = self
         render()
         listen()
+        prepareAnimation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,21 +77,58 @@ class HomeViewController: UIViewController {
         
         gameButton.image = UIImage(named: "gameBtn")
         drawButton.image = UIImage(named: "drawBtn")
-        
-        let gameBtnClick = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.gameButtonClicked));
-        gameButton.addGestureRecognizer(gameBtnClick)
-        gameButton.isUserInteractionEnabled = true
-        
-        let drawBtnClick = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.drawButtonClicked));
-        drawButton.addGestureRecognizer(drawBtnClick)
-        drawButton.isUserInteractionEnabled = true
-        
-        self.navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        initializeGames()
-        initializeChild()
+    func prepareAnimation () {
+        guard let path = Bundle.main.path(forResource: "Ambiance-nuit", ofType:"mp4") else {
+           debugPrint("video.m4v not found")
+           return
+        }
+        playerItem = AVPlayerItem(url: URL(fileURLWithPath: path))
+        player = AVPlayer(playerItem: playerItem!)
+        playerLayer = AVPlayerLayer(player: player!)
+        playerLayer!.frame = view.layer.bounds
+    }
+
+    func listenChildChanges (child: Child) {
+        Firestore.firestore().collection("child").document(child.id)
+        .addSnapshotListener { documentSnapshot, error in
+            guard let snapshot = documentSnapshot else {
+                print("Error fetching snapshots: \(error!)")
+                return
+            }
+            if let gamesNotAllowed = snapshot.data()!["gamesNotAllowed"] as? [String]{
+                self.currentChild?.gamesNotAllowed = gamesNotAllowed
+                self.myCollectionView.reloadData()
+            }
+            if let activity = snapshot.data()!["activity"] as? String {
+                if activity == "sleeping" {
+                    self.launchAnimationInLoop()
+                    self.animationLaunched = true
+                } else {
+                    self.stopAnimation()
+                }
+            }
+        }
+    }
+    
+    func launchAnimationInLoop() {
+        self.view.layer.addSublayer(playerLayer!)
+        player?.play()
+        
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem, queue: nil)
+        { notification in
+            self.player?.seek(to: .zero)
+            self.player?.play()
+        }
+    }
+    
+    func stopAnimation() {
+        if animationLaunched {
+            self.player?.pause()
+            self.playerLayer?.removeFromSuperlayer()
+            self.animationLaunched = false
+        }
     }
     
     func initializeChild () {
