@@ -10,6 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 import AVFoundation
+import Firebase
 
 class GameViewController: UIViewController {
     @IBOutlet weak var skView: SKView!
@@ -18,6 +19,9 @@ class GameViewController: UIViewController {
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     var currentPlayer: Player? = nil
     var currentChild: Child? = nil
+    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+    var gameBlocked = false
+    var viewAlreadyPush = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,7 @@ class GameViewController: UIViewController {
             skView.presentScene(scene)
             infligeBonus(scene: scene)
             whoIsTheWinner(scene: scene)
+            blockGameListener(scene: scene)
         }
         
         skView.backgroundColor = .clear
@@ -63,15 +68,38 @@ class GameViewController: UIViewController {
                 let child = self.currentChild
             {
                 if let result = data[0] as? String {
-                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                    let rankViewController = storyBoard.instantiateViewController(withIdentifier: "RankViewController") as! RankViewController
-                    rankViewController.winnerId = result
-                    rankViewController.currentPlayer = player
-                    rankViewController.currentChild = child
-                    self.navigationController?.pushViewController(rankViewController, animated: true)
+                    if self.gameBlocked == false && self.viewAlreadyPush == false {
+                        self.viewAlreadyPush = true
+                        let rankViewController = self.storyBoard.instantiateViewController(withIdentifier: "RankViewController") as! RankViewController
+                        rankViewController.winnerId = result
+                        rankViewController.currentPlayer = player
+                        rankViewController.currentChild = child
+                        self.navigationController?.pushViewController(rankViewController, animated: true)
+                    }
                 }
             }
         })
+    }
+    
+    func blockGameListener(scene: GameScene) {
+        if let child = currentChild {
+            Firestore.firestore().collection("child").document(child.id)
+            .addSnapshotListener { documentSnapshot, error in
+                guard let snapshot = documentSnapshot else {
+                    print("Error fetching snapshots: \(error!)")
+                    return
+                }
+                if let gamesNotAllowed = snapshot.data()!["gamesNotAllowed"] as? [String] {
+                    print(gamesNotAllowed)
+                    self.currentChild?.gamesNotAllowed = gamesNotAllowed
+                    if (gamesNotAllowed.contains("Les obstacles")) {
+                        self.gameBlocked = true
+                        let homeViewController = self.storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                        self.navigationController?.pushViewController(homeViewController, animated: true)
+                    }
+                }
+            }
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
