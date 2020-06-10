@@ -168,7 +168,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1A-I2-GTH">
-                                <rect key="frame" x="391" y="125" width="584" height="458"/>
+                                <rect key="frame" x="391" y="75" width="584" height="458"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RÈGLES DU JEU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXl-y3-xCh">
                                         <rect key="frame" x="154.5" y="38" width="275.5" height="50.5"/>
@@ -617,10 +617,9 @@
         <!--Navigation Controller-->
         <scene sceneID="p7G-rg-dTG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ORD-1o-jSS" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ORD-1o-jSS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wsb-HN-SpC">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -15,6 +15,9 @@ struct Child: Codable {
     var gender: String
     var location: Int
     var gamesNotAllowed: [String]
+    var activity: String
+    var currentGame: String
+    var currentSleep: String
     
     init?(id: String, data: [String: Any]) {
         
@@ -24,7 +27,10 @@ struct Child: Codable {
             let firstname = data["firstname"] as? String,
             let gender = data["gender"] as? String,
             let location = data["location"] as? Int,
-            let gamesNotAllowed = data["gamesNotAllowed"] as? [String]
+            let gamesNotAllowed = data["gamesNotAllowed"] as? [String],
+            let activity = data["activity"] as? String,
+            let currentGame = data["currentGame"] as? String,
+            let currentSleep = data["currentSleep"] as? String
         else {
             return nil
         }
@@ -34,5 +40,8 @@ struct Child: Codable {
         self.gender = gender
         self.location = location
         self.gamesNotAllowed = gamesNotAllowed
+        self.activity = activity
+        self.currentGame = currentGame
+        self.currentSleep = currentSleep
     }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Firebase
 
 class HomeViewController: UIViewController {
     var captureSession: AVCaptureSession!
@@ -17,25 +18,49 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var myCollectionView: UICollectionView!
     
     @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var drawView: SwiftSignatureView!
+    @IBOutlet weak var kitView: UIView!
+    @IBOutlet weak var gameView: UIView!
     
     @IBOutlet weak var drawButton: UIImageView!
-    @IBOutlet weak var drawView: SwiftSignatureView!
-    
-    @IBOutlet weak var kitView: UIView!
     @IBOutlet weak var deleteDrawBtn: UIImageView!
-    
     @IBOutlet weak var gameButton: UIImageView!
-    @IBOutlet weak var gameView: UIView!
     
     var games = [APIGame]()
     var currentChild: Child?
     var currentGame: APIGame?
+    var currentActivity: String = ""
+    var gameLaunched = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
+        render()
+        listen()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        initializeGames()
+        initializeChild()
+        self.gameLaunched = false
+        if let child = currentChild {
+            ChildrenService.updateActivity(id: child.id, activity: "")
+            ChildrenService.updateCurrentGame(id: child.id, currentGame: "")
+        }
+    }
+    
+    func listen () {
+        let gameBtnClick = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.gameButtonClicked));
+        gameButton.addGestureRecognizer(gameBtnClick)
+        gameButton.isUserInteractionEnabled = true
         
+        let drawBtnClick = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.drawButtonClicked));
+        drawButton.addGestureRecognizer(drawBtnClick)
+        drawButton.isUserInteractionEnabled = true
+    }
+    
+    func render () {
         menuView.backgroundColor = .clear
         gameView.layer.cornerRadius = 20
         
@@ -71,17 +96,9 @@ class HomeViewController: UIViewController {
                    return
                }
                self.currentChild = child
-            //        if let child = currentChild {
-            //            print("child id \(child.id)")
-            //            Firestore.firestore().collection("child").document(child.id)
-            //            .addSnapshotListener { documentSnapshot, error in
-            //                guard let snapshot = documentSnapshot else {
-            //                    print("Error fetching snapshots: \(error!)")
-            //                    return
-            //                }
-            //                print("snapshot \(snapshot)")
-            //            }
-            //        }
+               if let child = self.currentChild {
+                    self.listenChildChanges(child: child)
+               }
            }
        }
     }
@@ -100,9 +117,16 @@ class HomeViewController: UIViewController {
     
     @objc func gameButtonClicked() {
         if gameButton.image == UIImage(named: "closeBtn") {
+            if let child = currentChild {
+                ChildrenService.updateActivity(id: child.id, activity: "")
+                ChildrenService.updateCurrentGame(id: child.id, currentGame: "")
+            }
             gameButton.image = UIImage(named: "gameBtn")
             gameView.isHidden = true
         } else {
+            if let child = currentChild {
+                ChildrenService.updateActivity(id: child.id, activity: "gaming")
+            }
             gameButton.image = UIImage(named: "closeBtn")
             gameView.isHidden = false
         }
@@ -116,15 +140,22 @@ class HomeViewController: UIViewController {
     
     @objc func drawButtonClicked() {
         if drawButton.image == UIImage(named: "closeBtn") {
+            if (gameLaunched == false) {
+                self.currentActivity = ""
+            }
             drawButton.image = UIImage(named: "drawBtn")
             drawView.isHidden = true
             kitView.isHidden = true
             gameButton.center.x = gameButton.center.x - 50
         } else {
+            self.currentActivity = "drawing"
             drawButton.image = UIImage(named: "closeBtn")
             drawView.isHidden = false
             kitView.isHidden = false
             gameButton.center.x = gameButton.center.x + 50
+        }
+        if let child = currentChild {
+            ChildrenService.updateActivity(id: child.id, activity: currentActivity)
         }
     }
     
@@ -204,9 +235,15 @@ extension HomeViewController: UICollectionViewDataSource {
         
         cell.listenToImgClicked { () in
             self.currentGame = self.games[indexPath.row]
+            
             if self.games[indexPath.row].name == "Les obstacles" {
                 self.performSegue(withIdentifier: "OnBoardingViewController", sender: nil)
+                self.gameLaunched = true
                 self.gameButtonClicked()
+                if let child = self.currentChild {
+                    ChildrenService.updateActivity(id: child.id, activity: "gaming")
+                    ChildrenService.updateCurrentGame(id: child.id, currentGame: self.games[indexPath.row].name)
+                }
             }
         }
 
