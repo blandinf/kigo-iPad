@@ -10,10 +10,10 @@
 		32905491EB713D0A625B8DBA /* libPods-Kigo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2E2CF74A10428B9A0F9AA8 /* libPods-Kigo.a */; };
 		AD3725EE248393F4006828D2 /* BowlbyOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05D23A24839178006FB0F2 /* BowlbyOne-Regular.ttf */; };
 		AD3725F0248395FD006828D2 /* PTSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD3725EF248395FD006828D2 /* PTSans-Bold.ttf */; };
+		AD3725F82486BFB4006828D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD3725F72486BFB4006828D2 /* GoogleService-Info.plist */; };
 		AD4C7CDE2481333300F364ED /* Baloo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD4C7CDD2481333300F364ED /* Baloo-Regular.ttf */; };
 		AD4C7CE02481389400F364ED /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD4C7CDF2481389300F364ED /* Nunito-Regular.ttf */; };
 		AD4C7CE224813F3B00F364ED /* BoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4C7CE124813F3B00F364ED /* BoardingViewController.swift */; };
-		AD4C7CE624825E6A00F364ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD4C7CE524825E6A00F364ED /* GoogleService-Info.plist */; };
 		AD4D0ADB2451B556007B8D9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D0ADA2451B556007B8D9E /* AppDelegate.swift */; };
 		AD4D0ADD2451B556007B8D9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D0ADC2451B556007B8D9E /* SceneDelegate.swift */; };
 		AD4D0ADF2451B556007B8D9E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D0ADE2451B556007B8D9E /* HomeViewController.swift */; };
@@ -35,6 +35,11 @@
 		AD9409DC246D93720002E9B4 /* APIGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9409DB246D93720002E9B4 /* APIGame.swift */; };
 		AD9409DE246D93820002E9B4 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9409DD246D93820002E9B4 /* GameService.swift */; };
 		AD9409E0246D94B30002E9B4 /* WhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9409DF246D94B30002E9B4 /* WhoViewController.swift */; };
+		ADADD04D2490E5F800AFDF77 /* Ambiance-nuit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ADADD04C2490E5F800AFDF77 /* Ambiance-nuit.mp4 */; };
+		ADADD07124915B2400AFDF77 /* TripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADD07024915B2400AFDF77 /* TripService.swift */; };
+		ADADD07524915D1000AFDF77 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADD07424915D1000AFDF77 /* Trip.swift */; };
+		ADADD077249166C900AFDF77 /* ComputeLocationDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADD076249166C900AFDF77 /* ComputeLocationDistance.swift */; };
+		ADADD079249167C100AFDF77 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADD078249167C100AFDF77 /* Utils.swift */; };
 		ADC568ED246EFBB900376984 /* EnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC568EC246EFBB900376984 /* EnemyNode.swift */; };
 		ADD67B2D2468090400108D49 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B2C2468090400108D49 /* DrawViewController.swift */; };
 		ADD67B2F2468093300108D49 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B2E2468093300108D49 /* MapViewController.swift */; };
@@ -59,10 +64,10 @@
 		9C2E2CF74A10428B9A0F9AA8 /* libPods-Kigo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kigo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD05D23A24839178006FB0F2 /* BowlbyOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BowlbyOne-Regular.ttf"; sourceTree = "<group>"; };
 		AD3725EF248395FD006828D2 /* PTSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Bold.ttf"; sourceTree = "<group>"; };
+		AD3725F72486BFB4006828D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD4C7CDD2481333300F364ED /* Baloo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo-Regular.ttf"; sourceTree = "<group>"; };
 		AD4C7CDF2481389300F364ED /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		AD4C7CE124813F3B00F364ED /* BoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingViewController.swift; sourceTree = "<group>"; };
-		AD4C7CE524825E6A00F364ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD4D0AD72451B556007B8D9E /* Kigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4D0ADA2451B556007B8D9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD4D0ADC2451B556007B8D9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +95,11 @@
 		AD9409DB246D93720002E9B4 /* APIGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIGame.swift; sourceTree = "<group>"; };
 		AD9409DD246D93820002E9B4 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		AD9409DF246D94B30002E9B4 /* WhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoViewController.swift; sourceTree = "<group>"; };
+		ADADD04C2490E5F800AFDF77 /* Ambiance-nuit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ambiance-nuit.mp4"; sourceTree = "<group>"; };
+		ADADD07024915B2400AFDF77 /* TripService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripService.swift; sourceTree = "<group>"; };
+		ADADD07424915D1000AFDF77 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		ADADD076249166C900AFDF77 /* ComputeLocationDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputeLocationDistance.swift; sourceTree = "<group>"; };
+		ADADD078249167C100AFDF77 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		ADC568EC246EFBB900376984 /* EnemyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyNode.swift; sourceTree = "<group>"; };
 		ADD67B2C2468090400108D49 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
 		ADD67B2E2468093300108D49 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -167,20 +177,21 @@
 		AD4D0AD92451B556007B8D9E /* Kigo */ = {
 			isa = PBXGroup;
 			children = (
-				AD4C7CDC248132F400F364ED /* fonts */,
+				ADD67B3524684B8100108D49 /* Game */,
+				AD4F40FE245622B9002AE90D /* models */,
+				AD9409D2246D93080002E9B4 /* services */,
 				ADD67B3724684B9900108D49 /* Map */,
 				ADD67B3624684B8F00108D49 /* Draw */,
-				ADD67B3524684B8100108D49 /* Game */,
-				AD9409D2246D93080002E9B4 /* services */,
 				ADD67B32246846A200108D49 /* extensions */,
-				AD9409DF246D94B30002E9B4 /* WhoViewController.swift */,
+				ADADD06F2491322A00AFDF77 /* configuration */,
 				AD4D0ADE2451B556007B8D9E /* HomeViewController.swift */,
 				AD4D0AE32451B559007B8D9E /* Assets.xcassets */,
 				AD4D0AE02451B556007B8D9E /* Main.storyboard */,
 				AD4D0ADA2451B556007B8D9E /* AppDelegate.swift */,
 				AD4D0AE52451B559007B8D9E /* LaunchScreen.storyboard */,
-				AD4C7CE524825E6A00F364ED /* GoogleService-Info.plist */,
+				AD3725F72486BFB4006828D2 /* GoogleService-Info.plist */,
 				AD4D0AE82451B559007B8D9E /* Info.plist */,
+				ADADD06E249131BA00AFDF77 /* assets */,
 				ADD67B3D24684C8B00108D49 /* utils */,
 			);
 			path = Kigo;
@@ -216,6 +227,7 @@
 				ADEEBCA1246EFCCD00135227 /* EnemyType.swift */,
 				ADEEBCA3246EFCEC00135227 /* Game.swift */,
 				ADEEBCA5246EFD0400135227 /* Wave.swift */,
+				ADADD07424915D1000AFDF77 /* Trip.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -225,8 +237,26 @@
 			children = (
 				AD9409D3246D93320002E9B4 /* ChildrenService.swift */,
 				AD9409DD246D93820002E9B4 /* GameService.swift */,
+				ADADD07024915B2400AFDF77 /* TripService.swift */,
 			);
 			path = services;
+			sourceTree = "<group>";
+		};
+		ADADD06E249131BA00AFDF77 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				ADADD04C2490E5F800AFDF77 /* Ambiance-nuit.mp4 */,
+				AD4C7CDC248132F400F364ED /* fonts */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		ADADD06F2491322A00AFDF77 /* configuration */ = {
+			isa = PBXGroup;
+			children = (
+				AD9409DF246D94B30002E9B4 /* WhoViewController.swift */,
+			);
+			path = configuration;
 			sourceTree = "<group>";
 		};
 		ADD67B32246846A200108D49 /* extensions */ = {
@@ -234,6 +264,7 @@
 			children = (
 				AD4F40F52456229B002AE90D /* Bundle-Decoding.swift */,
 				ADD67B33246846BE00108D49 /* viewWholeScreen.swift */,
+				ADADD076249166C900AFDF77 /* ComputeLocationDistance.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -249,7 +280,6 @@
 				ADD67B3824684BCB00108D49 /* scene */,
 				AD4F40EC24562266002AE90D /* nodes */,
 				AD4F40FD245622A9002AE90D /* datas */,
-				AD4F40FE245622B9002AE90D /* models */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -320,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				ADD67B302468096C00108D49 /* SwiftSignatureView.swift */,
+				ADADD078249167C100AFDF77 /* Utils.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -401,10 +432,11 @@
 				AD3725EE248393F4006828D2 /* BowlbyOne-Regular.ttf in Resources */,
 				AD4C7CE02481389400F364ED /* Nunito-Regular.ttf in Resources */,
 				ADFF4BE6246856CE00825C3E /* LaunchScreen.storyboard in Resources */,
+				ADADD04D2490E5F800AFDF77 /* Ambiance-nuit.mp4 in Resources */,
 				AD4DE490246DD98A00061D32 /* bonus-types.json in Resources */,
+				AD3725F82486BFB4006828D2 /* GoogleService-Info.plist in Resources */,
 				ADFF4BE5246856C100825C3E /* GameScene.sks in Resources */,
 				ADFF4BE4246856B900825C3E /* Assets.xcassets in Resources */,
-				AD4C7CE624825E6A00F364ED /* GoogleService-Info.plist in Resources */,
 				AD3725F0248395FD006828D2 /* PTSans-Bold.ttf in Resources */,
 				AD4C7CDE2481333300F364ED /* Baloo-Regular.ttf in Resources */,
 				ADFF4BE2246856A900825C3E /* Main.storyboard in Resources */,
@@ -467,15 +499,18 @@
 				ADD67B2F2468093300108D49 /* MapViewController.swift in Sources */,
 				AD4DE49A246DDAA900061D32 /* WaitingViewController.swift in Sources */,
 				ADEEBCB3247ED4FC00135227 /* GameCollectionViewCell.swift in Sources */,
+				ADADD07524915D1000AFDF77 /* Trip.swift in Sources */,
 				AD4DE48E246DD93200061D32 /* BonusNode.swift in Sources */,
 				AD4F40F024562281002AE90D /* GameScene.swift in Sources */,
 				AD9409E0246D94B30002E9B4 /* WhoViewController.swift in Sources */,
 				ADEEBCA6246EFD0400135227 /* Wave.swift in Sources */,
+				ADADD079249167C100AFDF77 /* Utils.swift in Sources */,
 				ADEEBCAE247AE01E00135227 /* RankViewController.swift in Sources */,
 				AD4DE482246DD5B300061D32 /* GameDelegate.swift in Sources */,
 				AD9409DC246D93720002E9B4 /* APIGame.swift in Sources */,
 				ADD67B2D2468090400108D49 /* DrawViewController.swift in Sources */,
 				AD4DE496246DD9E500061D32 /* Player.swift in Sources */,
+				ADADD07124915B2400AFDF77 /* TripService.swift in Sources */,
 				AD4F40EB24562235002AE90D /* GameViewController.swift in Sources */,
 				AD9409DE246D93820002E9B4 /* GameService.swift in Sources */,
 				ADD67B312468096C00108D49 /* SwiftSignatureView.swift in Sources */,
@@ -488,6 +523,7 @@
 				AD4C7CE224813F3B00F364ED /* BoardingViewController.swift in Sources */,
 				ADEEBCA2246EFCCD00135227 /* EnemyType.swift in Sources */,
 				AD4D0ADB2451B556007B8D9E /* AppDelegate.swift in Sources */,
+				ADADD077249166C900AFDF77 /* ComputeLocationDistance.swift in Sources */,
 				AD4D0ADD2451B556007B8D9E /* SceneDelegate.swift in Sources */,
 				AD4DE492246DD9AA00061D32 /* Bonus.swift in Sources */,
 				AD9409DA246D935C0002E9B4 /* Child.swift in Sources */,

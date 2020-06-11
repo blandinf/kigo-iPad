@@ -10,6 +10,7 @@ import UIKit
 import AVKit
 import AVFoundation
 import Firebase
+import MapKit
 
 class HomeViewController: UIViewController {
     var captureSession: AVCaptureSession!
@@ -26,6 +27,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var drawButton: UIImageView!
     @IBOutlet weak var deleteDrawBtn: UIImageView!
     @IBOutlet weak var gameButton: UIImageView!
+    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var remainingTimeLbl: UILabel!
+    @IBOutlet weak var carImage: UIImageView!
     
     var games = [APIGame]()
     var currentChild: Child?
@@ -36,6 +40,9 @@ class HomeViewController: UIViewController {
     var player:AVPlayer?
     var playerLayer: AVPlayerLayer?
     var animationLaunched = false
+    var from = CLLocationCoordinate2D()
+    var timer:Timer?
+    var currentDestination = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +51,7 @@ class HomeViewController: UIViewController {
         render()
         listen()
         prepareAnimation()
+        bindCurrentLocation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +74,15 @@ class HomeViewController: UIViewController {
         drawButton.isUserInteractionEnabled = true
     }
     
+    func bindCurrentLocation () {
+        Utils.getCoordinateFrom(address: "Annecy, France") { coordinate, error in
+            guard let coordinate = coordinate, error == nil else { return }
+            DispatchQueue.main.async {
+                self.from = coordinate
+            }
+        }
+    }
+    
     func render () {
         menuView.backgroundColor = .clear
         gameView.layer.cornerRadius = 20
@@ -73,10 +90,13 @@ class HomeViewController: UIViewController {
         drawView.backgroundColor = .clear
         drawView.pinEdges(to: view)
         
-        kitView.layer.cornerRadius = 30
+        kitView.layer.cornerRadius = 6
+        kitView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
         
-        gameButton.image = UIImage(named: "gameBtn")
-        drawButton.image = UIImage(named: "drawBtn")
+        gameButton.image = UIImage(named: "jeu")
+        drawButton.image = UIImage(named: "dessin")
+        
+        progressView.transform = progressView.transform.scaledBy(x: 1, y: 7)
     }
     
     func prepareAnimation () {
@@ -88,6 +108,75 @@ class HomeViewController: UIViewController {
         player = AVPlayer(playerItem: playerItem!)
         playerLayer = AVPlayerLayer(player: player!)
         playerLayer!.frame = view.layer.bounds
+    }
+    
+    func showRemainingTime (destination: String) {
+        if destination.isEmpty {
+            remainingTimeLbl.isHidden = true
+            progressView.isHidden = true
+        } else {
+            remainingTimeLbl.isHidden = false
+            progressView.isHidden = false
+        }
+    }
+    
+    func updateTime (destination: String) {
+        var to = CLLocationCoordinate2D()
+        Utils.getCoordinateFrom(address: destination) { coordinate, error in
+            guard let coordinate = coordinate, error == nil else { return }
+            DispatchQueue.main.async {
+                to = coordinate
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            if self.from.latitude != 0 && self.from.longitude != 0 && to.longitude != 0 && to.latitude != 0 {
+                let distanceInMeters = Utils.distance(from: self.from, to: to)
+                let distancesInKms = Int(Int(distanceInMeters) / 1000)
+                let estimation = Double(Double(distancesInKms) / 70.0)
+                let hours = Int(estimation)
+                var minutes = Int((estimation - Double(hours)) * 100)
+                minutes = minutes * 60 / 100
+                
+                self.remainingTimeLbl.text = "ARRIVÉE DANS"
+                
+                if hours > 0 {
+                    self.remainingTimeLbl.text! += " \(hours)H "
+                }
+                
+                if minutes > 0 {
+                    self.remainingTimeLbl.text! += "\(minutes)MIN"
+                }
+                
+                self.launchDestinationCountdown(hours: hours, minutes: minutes)
+            } else {
+                self.showRemainingTime(destination: "")
+            }
+        }
+    }
+    
+    func launchDestinationCountdown (hours: Int, minutes: Int) {
+        self.progressView.progress = 0.0
+        let hoursInMinutes = hours * 60
+        var totalMinutes = hoursInMinutes + minutes
+        let coeff = CGFloat(100.0/Float(totalMinutes))
+        let offset = 1.0 / Double(totalMinutes)
+        timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { timer in
+            totalMinutes -= 1
+            self.progressView.progress += Float(offset)
+            self.carImage.center.x += CGFloat(Float(offset)) * 100 + coeff
+            let result = Utils.convertMinutesToHoursAndMinutes(totalMinutes: totalMinutes)
+            if (result.hours > 0) {
+                self.remainingTimeLbl.text = "ARRIVÉE DANS \(result.hours)H \(result.minutes)MIN"
+            } else {
+                self.remainingTimeLbl.text = "ARRIVÉE DANS \(result.minutes)MIN"
+            }
+            
+            if totalMinutes <= 0 || self.progressView.progress >= 1.0 {
+                self.remainingTimeLbl.text = "VOUS ÊTES ARRIVÉS!"
+                timer.invalidate()
+            }
+        })
     }
 
     func listenChildChanges (child: Child) {
@@ -107,6 +196,16 @@ class HomeViewController: UIViewController {
                     self.animationLaunched = true
                 } else {
                     self.stopAnimation()
+                }
+            }
+            if let destination = snapshot.data()!["destination"] as? String {
+                self.showRemainingTime(destination: destination)
+                if !destination.isEmpty && destination != self.currentDestination {
+                    self.currentDestination = destination
+                    if let t = self.timer {
+                        t.invalidate()
+                    }
+                    self.updateTime(destination: destination)
                 }
             }
         }
@@ -141,7 +240,9 @@ class HomeViewController: UIViewController {
                self.currentChild = child
                if let child = self.currentChild {
                     self.listenChildChanges(child: child)
+                    self.showRemainingTime(destination: child.destination)
                }
+               
            }
        }
     }
@@ -153,24 +254,23 @@ class HomeViewController: UIViewController {
                return
            }
            self.games = gameArray
-            print("games \(self.games)")
            self.myCollectionView.reloadData()
        }
     }
     
     @objc func gameButtonClicked() {
-        if gameButton.image == UIImage(named: "closeBtn") {
+        if gameButton.image == UIImage(named: "closeBtn2") {
             if let child = currentChild {
                 ChildrenService.updateActivity(id: child.id, activity: "")
                 ChildrenService.updateCurrentGame(id: child.id, currentGame: "")
             }
-            gameButton.image = UIImage(named: "gameBtn")
+            gameButton.image = UIImage(named: "jeu")
             gameView.isHidden = true
         } else {
             if let child = currentChild {
                 ChildrenService.updateActivity(id: child.id, activity: "gaming")
             }
-            gameButton.image = UIImage(named: "closeBtn")
+            gameButton.image = UIImage(named: "closeBtn2")
             gameView.isHidden = false
         }
     }
@@ -182,20 +282,20 @@ class HomeViewController: UIViewController {
     }
     
     @objc func drawButtonClicked() {
-        if drawButton.image == UIImage(named: "closeBtn") {
+        if drawButton.image == UIImage(named: "closeBtn2") {
             if (gameLaunched == false) {
                 self.currentActivity = ""
             }
-            drawButton.image = UIImage(named: "drawBtn")
+            drawButton.image = UIImage(named: "dessin")
             drawView.isHidden = true
             kitView.isHidden = true
-            gameButton.center.x = gameButton.center.x - 50
+            gameButton.center.x = gameButton.center.x + 50
         } else {
             self.currentActivity = "drawing"
-            drawButton.image = UIImage(named: "closeBtn")
+            drawButton.image = UIImage(named: "closeBtn2")
             drawView.isHidden = false
             kitView.isHidden = false
-            gameButton.center.x = gameButton.center.x + 50
+            gameButton.center.x = gameButton.center.x - 50
         }
         if let child = currentChild {
             ChildrenService.updateActivity(id: child.id, activity: currentActivity)
@@ -321,5 +421,4 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         return 0.0
     }
 }
-
 
