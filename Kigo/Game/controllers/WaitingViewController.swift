@@ -20,6 +20,7 @@ class WaitingViewController: UIViewController {
     var captureSession: AVCaptureSession!
     var stillImageOutput: AVCapturePhotoOutput!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
+    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +38,10 @@ class WaitingViewController: UIViewController {
     }
     
     @objc func backHome() {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        self.navigationController?.pushViewController(homeViewController, animated: true)
+        if !(self.navigationController!.viewControllers.contains(homeViewController)){
+            self.navigationController?.pushViewController(homeViewController, animated: false)
+        }
     }
     
     func initializeChild () {
@@ -84,7 +86,16 @@ class WaitingViewController: UIViewController {
            super.viewDidAppear(animated)
         
             SocketIOManager.sharedInstance.listen(event: "GameIsReady", callback: { (data, ack) in
-                self.performSegue(withIdentifier: "GameViewController", sender: nil)
+                let gameViewController = self.storyBoard.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+                if let myPlayer = self.player,
+                    let child = self.currentChild
+                {
+                    gameViewController.currentPlayer = myPlayer
+                    gameViewController.currentChild = child
+                }
+                if !(self.navigationController!.viewControllers.contains(gameViewController)){
+                    self.navigationController?.pushViewController(gameViewController, animated: false)
+                }
             })
         
            captureSession = AVCaptureSession()

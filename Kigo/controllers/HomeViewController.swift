@@ -112,9 +112,11 @@ class HomeViewController: UIViewController {
     
     func showRemainingTime (destination: String) {
         if destination.isEmpty {
+            carImage.isHidden = true
             remainingTimeLbl.isHidden = true
             progressView.isHidden = true
         } else {
+            carImage.isHidden = false
             remainingTimeLbl.isHidden = false
             progressView.isHidden = false
         }
@@ -161,7 +163,7 @@ class HomeViewController: UIViewController {
         var totalMinutes = hoursInMinutes + minutes
         let coeff = CGFloat(100.0/Float(totalMinutes))
         let offset = 1.0 / Double(totalMinutes)
-        timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { timer in
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
             totalMinutes -= 1
             self.progressView.progress += Float(offset)
             self.carImage.center.x += CGFloat(Float(offset)) * 100 + coeff

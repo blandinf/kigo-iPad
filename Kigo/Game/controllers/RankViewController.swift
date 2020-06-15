@@ -52,7 +52,9 @@ class RankViewController: UIViewController {
             SocketIOManager.sharedInstance.emit(event: "playerDisconnect", message: ["player": json])
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-            self.navigationController?.pushViewController(homeViewController, animated: true)
+            if !(self.navigationController!.viewControllers.contains(homeViewController)){
+                self.navigationController?.pushViewController(homeViewController, animated: false)
+            }
         }
     }
     
@@ -62,7 +64,9 @@ class RankViewController: UIViewController {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let waitingViewController = storyBoard.instantiateViewController(withIdentifier: "WaitingViewController") as! WaitingViewController
             waitingViewController.player = currentPlayer
-            self.navigationController?.pushViewController(waitingViewController, animated: true)
+            if !(self.navigationController!.viewControllers.contains(waitingViewController)){
+                self.navigationController?.pushViewController(waitingViewController, animated: false)
+            }
         }
     }
     

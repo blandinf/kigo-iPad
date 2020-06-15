@@ -31,6 +31,10 @@ class BoardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initialization()
+    }
+    
+    func initialization () {
         menuView.backgroundColor = .clear
         boardingView.layer.cornerRadius = 15
         boardingImg.layer.cornerRadius = 10
@@ -49,7 +53,7 @@ class BoardingViewController: UIViewController {
     }
     
     @objc func closeButtonClicked() {
-        navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: false)
     }
     
     @IBAction func previous(_ sender: Any) {
@@ -71,7 +75,9 @@ class BoardingViewController: UIViewController {
             } else if currentPage == game.boardingInstructions.count - 1 {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let waitingViewController = storyBoard.instantiateViewController(withIdentifier: "WaitingViewController") as! WaitingViewController
-                self.navigationController?.pushViewController(waitingViewController, animated: true)
+                if !(self.navigationController!.viewControllers.contains(waitingViewController)){
+                    self.navigationController?.pushViewController(waitingViewController, animated: false)
+                }
             }
         }
     }

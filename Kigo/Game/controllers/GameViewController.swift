@@ -22,14 +22,23 @@ class GameViewController: UIViewController {
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
     var gameBlocked = false
     var viewAlreadyPush = false
+    @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var closeBtn: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        menuView.backgroundColor = .clear
+        let closeBtnClick = UITapGestureRecognizer(target: self, action: #selector(GameViewController.backHome));
+        closeBtn.addGestureRecognizer(closeBtnClick)
+        closeBtn.isUserInteractionEnabled = true
         
         if let scene = GameScene(fileNamed: "GameScene") {
             scene.scaleMode = .aspectFill
             scene.backgroundColor = .clear
             scene.gameDelegate = self
+            if let child = currentChild {
+                scene.currentChild = child
+            }
             skView.presentScene(scene)
             infligeBonus(scene: scene)
             whoIsTheWinner(scene: scene)
@@ -38,6 +47,13 @@ class GameViewController: UIViewController {
         
         skView.backgroundColor = .clear
         skView.pinEdges(to: view)
+    }
+    
+    @objc func backHome() {
+        let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        if !(self.navigationController!.viewControllers.contains(homeViewController)) {
+            self.navigationController?.pushViewController(homeViewController, animated: false)
+        }
     }
     
     func infligeBonus(scene: GameScene) {
@@ -74,7 +90,9 @@ class GameViewController: UIViewController {
                         rankViewController.winnerId = result
                         rankViewController.currentPlayer = player
                         rankViewController.currentChild = child
-                        self.navigationController?.pushViewController(rankViewController, animated: true)
+                        if !(self.navigationController!.viewControllers.contains(rankViewController)){
+                            self.navigationController?.pushViewController(rankViewController, animated: false)
+                        }
                     }
                 }
             }
@@ -95,7 +113,9 @@ class GameViewController: UIViewController {
                     if (gamesNotAllowed.contains("Les obstacles")) {
                         self.gameBlocked = true
                         let homeViewController = self.storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                        self.navigationController?.pushViewController(homeViewController, animated: true)
+                        if !(self.navigationController!.viewControllers.contains(homeViewController)){
+                            self.navigationController?.pushViewController(homeViewController, animated: false)
+                        }
                     }
                 }
             }
@@ -133,6 +153,7 @@ class GameViewController: UIViewController {
         videoPreviewLayer.connection?.videoOrientation = .landscapeRight
         view.layer.addSublayer(videoPreviewLayer)
         view.addSubview(skView)
+        view.addSubview(menuView)
         
         
         DispatchQueue.global(qos: .userInitiated).async { //[weak self] in
@@ -144,11 +165,11 @@ class GameViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override var shouldAutorotate: Bool {
