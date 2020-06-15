@@ -36,9 +36,6 @@
 		AD9409DE246D93820002E9B4 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9409DD246D93820002E9B4 /* GameService.swift */; };
 		AD9409E0246D94B30002E9B4 /* WhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9409DF246D94B30002E9B4 /* WhoViewController.swift */; };
 		ADADD04D2490E5F800AFDF77 /* Ambiance-nuit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ADADD04C2490E5F800AFDF77 /* Ambiance-nuit.mp4 */; };
-		ADADD07124915B2400AFDF77 /* TripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADD07024915B2400AFDF77 /* TripService.swift */; };
-		ADADD07524915D1000AFDF77 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADD07424915D1000AFDF77 /* Trip.swift */; };
-		ADADD077249166C900AFDF77 /* ComputeLocationDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADD076249166C900AFDF77 /* ComputeLocationDistance.swift */; };
 		ADADD079249167C100AFDF77 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADD078249167C100AFDF77 /* Utils.swift */; };
 		ADC568ED246EFBB900376984 /* EnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC568EC246EFBB900376984 /* EnemyNode.swift */; };
 		ADD67B2D2468090400108D49 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD67B2C2468090400108D49 /* DrawViewController.swift */; };
@@ -96,8 +93,6 @@
 		AD9409DD246D93820002E9B4 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		AD9409DF246D94B30002E9B4 /* WhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoViewController.swift; sourceTree = "<group>"; };
 		ADADD04C2490E5F800AFDF77 /* Ambiance-nuit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ambiance-nuit.mp4"; sourceTree = "<group>"; };
-		ADADD07024915B2400AFDF77 /* TripService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripService.swift; sourceTree = "<group>"; };
-		ADADD07424915D1000AFDF77 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		ADADD076249166C900AFDF77 /* ComputeLocationDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputeLocationDistance.swift; sourceTree = "<group>"; };
 		ADADD078249167C100AFDF77 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		ADC568EC246EFBB900376984 /* EnemyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyNode.swift; sourceTree = "<group>"; };
@@ -227,7 +222,6 @@
 				ADEEBCA1246EFCCD00135227 /* EnemyType.swift */,
 				ADEEBCA3246EFCEC00135227 /* Game.swift */,
 				ADEEBCA5246EFD0400135227 /* Wave.swift */,
-				ADADD07424915D1000AFDF77 /* Trip.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -237,7 +231,6 @@
 			children = (
 				AD9409D3246D93320002E9B4 /* ChildrenService.swift */,
 				AD9409DD246D93820002E9B4 /* GameService.swift */,
-				ADADD07024915B2400AFDF77 /* TripService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -499,7 +492,6 @@
 				ADD67B2F2468093300108D49 /* MapViewController.swift in Sources */,
 				AD4DE49A246DDAA900061D32 /* WaitingViewController.swift in Sources */,
 				ADEEBCB3247ED4FC00135227 /* GameCollectionViewCell.swift in Sources */,
-				ADADD07524915D1000AFDF77 /* Trip.swift in Sources */,
 				AD4DE48E246DD93200061D32 /* BonusNode.swift in Sources */,
 				AD4F40F024562281002AE90D /* GameScene.swift in Sources */,
 				AD9409E0246D94B30002E9B4 /* WhoViewController.swift in Sources */,
@@ -510,7 +502,6 @@
 				AD9409DC246D93720002E9B4 /* APIGame.swift in Sources */,
 				ADD67B2D2468090400108D49 /* DrawViewController.swift in Sources */,
 				AD4DE496246DD9E500061D32 /* Player.swift in Sources */,
-				ADADD07124915B2400AFDF77 /* TripService.swift in Sources */,
 				AD4F40EB24562235002AE90D /* GameViewController.swift in Sources */,
 				AD9409DE246D93820002E9B4 /* GameService.swift in Sources */,
 				ADD67B312468096C00108D49 /* SwiftSignatureView.swift in Sources */,
@@ -523,7 +514,6 @@
 				AD4C7CE224813F3B00F364ED /* BoardingViewController.swift in Sources */,
 				ADEEBCA2246EFCCD00135227 /* EnemyType.swift in Sources */,
 				AD4D0ADB2451B556007B8D9E /* AppDelegate.swift in Sources */,
-				ADADD077249166C900AFDF77 /* ComputeLocationDistance.swift in Sources */,
 				AD4D0ADD2451B556007B8D9E /* SceneDelegate.swift in Sources */,
 				AD4DE492246DD9AA00061D32 /* Bonus.swift in Sources */,
 				AD9409DA246D935C0002E9B4 /* Child.swift in Sources */,
