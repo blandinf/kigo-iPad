@@ -29,4 +29,13 @@ class Utils {
         
         return (hours, realMinutes)
     }
+    
+    static func computeAge (birthdate: Date) -> Int {
+        let now = NSDate()
+        let calendar : NSCalendar = NSCalendar.current as NSCalendar
+        let ageComponents = calendar.components(.year, from: birthdate, to: now as Date, options: [])
+        let age = ageComponents.year!
+        
+        return age
+    }
 }

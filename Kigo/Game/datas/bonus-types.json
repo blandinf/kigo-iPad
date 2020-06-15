@@ -1,34 +1,20 @@
 [
     {
-        "name": "stone",
-        "speed": 400,
-        "chanceToAppear": 0.65,
-        "width": 50,
-        "height": 30,
-        "variety": 2
+        "name": "bomb",
+        "chanceToAppear": 0.70,
+        "width": 35,
+        "height": 50
     },
     {
         "name": "balloon",
-        "speed": 500,
-        "chanceToAppear": 0.75,
-        "width": 60,
-        "height": 80,
-        "variety": 1
-    },
-    {
-        "name": "flashlight",
-        "speed": 600,
-        "chanceToAppear": 0.85,
-        "width": 60,
-        "height": 40,
-        "variety": 1
+        "chanceToAppear": 0.80,
+        "width": 35,
+        "height": 50
     },
     {
         "name": "ice",
-        "speed": 700,
-        "chanceToAppear": 0.95,
-        "width": 40,
-        "height": 40,
-        "variety": 1
+        "chanceToAppear": 0.90,
+        "width": 50,
+        "height": 50
     }
 ]

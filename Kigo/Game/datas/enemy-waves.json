@@ -4,31 +4,19 @@
         "enemies": [
             {
                 "position": 0,
-                "xOffset": 2
+                "xOffset": 20
             },
             {
                 "position": 4,
-                "xOffset": 0
+                "xOffset": 6
             },
             {
                 "position": 8,
-                "xOffset": 2
+                "xOffset": 5
             },
             {
                 "position": 4,
-                "xOffset": 0
-            },
-            {
-                "position": 8,
                 "xOffset": 2
-            },
-            {
-                "position": 8,
-                "xOffset": 2
-            },
-            {
-                "position": 4,
-                "xOffset": 0
             },
             {
                 "position": 8,
@@ -38,7 +26,7 @@
         "bonus": [
             {
                 "position": 0,
-                "xOffset": 0,
+                "xOffset": 2
             },
         ]
     },
@@ -47,7 +35,7 @@
         "enemies": [
             {
                 "position": 2,
-                "xOffset": 0
+                "xOffset": 2
             },
             {
                 "position": 1,
@@ -87,7 +75,27 @@
             },
             {
                 "position": 4,
-                "xOffset": 0
+                "xOffset": 2
+            },
+            {
+                "position": 8,
+                "xOffset": 2
+            },
+            {
+                "position": 4,
+                "xOffset": 2
+            },
+            {
+                "position": 8,
+                "xOffset": 2
+            },
+            {
+                "position": 8,
+                "xOffset": 2
+            },
+            {
+                "position": 4,
+                "xOffset": 2
             },
             {
                 "position": 8,
@@ -97,7 +105,7 @@
         "bonus": [
             {
                 "position": 3,
-                "xOffset": 0,
+                "xOffset": 2,
             }
         ]
     },
@@ -106,7 +114,7 @@
         "enemies": [
             {
                 "position": 4,
-                "xOffset": 0
+                "xOffset": 2
             },
             {
                 "position": 3,

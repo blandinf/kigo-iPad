@@ -11,14 +11,18 @@ import SpriteKit
 class BonusNode: SKSpriteNode {
     var type: BonusType
     
-    init(type: BonusType, startPosition: CGPoint, xOffset: CGFloat) {
+    init(type: BonusType, startPosition: CGPoint, xOffset: CGFloat, age: Int) {
         self.type = type
 
         super.init(texture: SKTexture(), color: .white, size: CGSize())
                        
-        texture = fillWithRandomTexture()
-        size = CGSize(width: type.width, height: type.height)
-                
+        texture = SKTexture(imageNamed: type.name)
+        if age < 6 {
+            size = CGSize(width: type.width + 10, height: type.height + 15)
+        } else {
+            size = CGSize(width: type.width, height: type.height)
+        }
+        
         physicsBody = SKPhysicsBody(rectangleOf: size)
         physicsBody?.categoryBitMask = CollisionType.bonus.rawValue
         physicsBody?.collisionBitMask = CollisionType.bonus.rawValue
@@ -33,18 +37,18 @@ class BonusNode: SKSpriteNode {
         fatalError("NO")
     }
     
-    func fillWithRandomTexture () -> SKTexture {
-        let random = Int.random(in: 1...type.variety)
-        var finalType: String = ""
-        
-        if type.name == "stone" {
-            finalType = type.name + "\(random)"
-        } else {
-            finalType = type.name
-        }
-        
-        return SKTexture(imageNamed: finalType)
-    }
+//    func fillWithRandomTexture () -> SKTexture {
+//        let random = Int.random(in: 1...type.variety)
+//        var finalType: String = ""
+//
+//        if type.name == "stone" {
+//            finalType = type.name + "\(random)"
+//        } else {
+//            finalType = type.name
+//        }
+//
+//        return SKTexture(imageNamed: finalType)
+//    }
     
     func configureMovement() {
        let path = UIBezierPath()
@@ -52,7 +56,7 @@ class BonusNode: SKSpriteNode {
        
         path.addCurve(to: CGPoint(x: -3500, y: 0), controlPoint1: CGPoint(x: 0, y: -position.y * 4), controlPoint2: CGPoint(x: -1000, y: -position.y))
        
-       let movement = SKAction.follow(path.cgPath, asOffset: true, orientToPath: false, speed: type.speed)
+       let movement = SKAction.follow(path.cgPath, asOffset: true, orientToPath: false, speed: 200)
        let sequence = SKAction.sequence([movement, .removeFromParent()])
        run(sequence)
    }

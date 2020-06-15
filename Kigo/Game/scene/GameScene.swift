@@ -16,9 +16,8 @@ enum CollisionType: UInt32 {
 }
 
 enum BonusTypes: String {
-    case STONE = "stone"
+    case BOMB = "bomb"
     case BALLOON = "balloon"
-    case FLASHLIGHT = "flashlight"
     case ICE = "ice"
 }
 
@@ -26,7 +25,7 @@ class GameScene: SKScene {
     let PLAYER_HEIGHT: CGFloat = 30.0
     let PLAYER_WIDTH: CGFloat = 75.0
     
-    let player = SKSpriteNode(imageNamed: "bird-step01")
+    let player = SKSpriteNode(imageNamed: "circle")
     
     let waves = Bundle.main.decode([Wave].self, from: "enemy-waves.json")
     let enemyTypes = Bundle.main.decode([EnemyType].self, from: "enemy-type.json")
@@ -43,6 +42,8 @@ class GameScene: SKScene {
     var playerShield = 3
     var beginning = true
     var gameDelegate: GameDelegate?
+    var currentChild: Child?
+    var age: Int? = 5
     
     let positions = Array(stride(from: 0, through: 320, by: 80))
     
@@ -56,30 +57,34 @@ class GameScene: SKScene {
         player.zPosition = 1
         addChild(player)
         
-        player.size = CGSize(width: 100, height: 100)
+        player.size = CGSize(width: 60, height: 60)
         player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
         player.physicsBody?.categoryBitMask = CollisionType.player.rawValue
         player.physicsBody?.collisionBitMask = CollisionType.enemy.rawValue | CollisionType.bonus.rawValue
         player.physicsBody?.contactTestBitMask = CollisionType.enemy.rawValue | CollisionType.bonus.rawValue
         player.physicsBody?.isDynamic = false
         
-        animatePlayer()
+        if let child = currentChild {
+            self.age = Utils.computeAge(birthdate: child.birthdate)
+        }
+        
+//        animatePlayer()
         
 //        launchVideoInLoop()
     }
     
-    func animatePlayer() {
-        var textures: [SKTexture] = []
-        for i in 1...4 {
-            textures.append(SKTexture(imageNamed: "bird-step\(i)"))
-        }
-        textures.append(textures[2])
-        textures.append(textures[1])
-        
-        var birdAnimation = SKAction.animate(with: textures, timePerFrame: 0.1)
-        
-        player.run(SKAction.repeatForever(birdAnimation))
-    }
+//    func animatePlayer() {
+//        var textures: [SKTexture] = []
+//        for i in 1...4 {
+//            textures.append(SKTexture(imageNamed: "bird-step\(i)"))
+//        }
+//        textures.append(textures[2])
+//        textures.append(textures[1])
+//
+//        var birdAnimation = SKAction.animate(with: textures, timePerFrame: 0.1)
+//
+//        player.run(SKAction.repeatForever(birdAnimation))
+//    }
     
     
     func launchVideoInLoop() {
@@ -161,26 +166,36 @@ class GameScene: SKScene {
         }
         
         let currentWave = waves[waveNumber]
+        print(currentWave.name)
         waveNumber += 1
         
-        let maximumEnemyType = min(enemyTypes.count, levelNumber + 1)
+//        let maximumEnemyType = min(enemyTypes.count, levelNumber + 1)
         let bonusType = Int.random(in: 0..<bonusTypes.count)
         
-        let enemyOffsetX: CGFloat = 60
+        let enemyOffsetX: CGFloat = 62
         let enemyStartX = 600
 
         if currentWave.enemies.isEmpty {
-            for (index, var position) in positions.shuffled().enumerated() {
-                let enemyType = Int.random(in: 0..<maximumEnemyType)
+            for (index, var pos) in positions.shuffled().enumerated() {
+                let enemyType = Int.random(in: 0...1)
+                let location = Int.random(in: 0...1)
                 let type = enemyTypes[enemyType]
-                if type.location == "air" {
-                    if position < 0 {
-                        position = position * -1
+                var position = 0
+                if location == 0 {
+                    if self.age! < 6 {
+                        position = Int.random(in: -420 ... -200)
+                    } else {
+                        position = Int.random(in: -420 ... -180)
                     }
                 } else {
-                    position = -320
+                    if self.age! < 6 {
+                        position = Int.random(in: 280 ... 440)
+                    } else {
+                        position = Int.random(in: 240 ... 440)
+                    }
                 }
-                let enemy = EnemyNode(type: type, startPosition: CGPoint(x: enemyStartX, y: position), xOffset: enemyOffsetX * CGFloat(index * 3))
+                let moveSpeed: CGFloat = self.age! < 6 ? 150 : 280
+                let enemy = EnemyNode(type: type, startPosition: CGPoint(x: enemyStartX, y: position), xOffset: enemyOffsetX * CGFloat(index * 3), moveSpeed: moveSpeed)
                 addChild(enemy)
             }
         }
@@ -188,8 +203,12 @@ class GameScene: SKScene {
         if !currentWave.bonus.isEmpty {
             for bonus in currentWave.bonus {
                 let type = bonusTypes[bonusType]
-                let node = BonusNode(type: type, startPosition: CGPoint(x: 600, y: positions[bonus.position]), xOffset: 100 * bonus.xOffset)
-                if node.appear(chanceToAppear: type.chanceToAppear) {
+                let node = BonusNode(type: type, startPosition: CGPoint(x: 600, y: positions[bonus.position]), xOffset: 100 * bonus.xOffset, age: self.age!)
+                var chanceToAppear = type.chanceToAppear
+                if self.age! < 6 {
+                    chanceToAppear = chanceToAppear - 10
+                }
+                if node.appear(chanceToAppear: chanceToAppear) {
                     addChild(node)
                 }
             }
@@ -220,9 +239,7 @@ class GameScene: SKScene {
         switch type {
             case BonusTypes.BALLOON.rawValue:
                 balloonEffect()
-            case BonusTypes.FLASHLIGHT.rawValue:
-                flashlightEffect()
-            case BonusTypes.STONE.rawValue:
+            case BonusTypes.BOMB.rawValue:
                 stoneEffect()
             case BonusTypes.ICE.rawValue:
                 iceEffect()
@@ -232,20 +249,11 @@ class GameScene: SKScene {
     }
     
     func balloonEffect () {
-        player.size = CGSize(width: 150, height: 150)
+        player.size = CGSize(width: 120, height: 120)
         player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            self.player.size = CGSize(width: 100, height: 100)
+            self.player.size = CGSize(width: 70, height: 70)
             self.player.physicsBody = SKPhysicsBody(rectangleOf: self.player.size)
-        }
-    }
-    
-    func flashlightEffect () {
-        let broken = SKSpriteNode(imageNamed: "broken")
-        broken.size = CGSize(width: displaySize.width, height: displaySize.height)
-        addChild(broken)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            broken.removeFromParent()
         }
     }
     
